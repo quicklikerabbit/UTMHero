@@ -1,0 +1,48 @@
+<%= form_for @link, html: { multipart: true } do |f| %>
+  <% if @link.errors.any? %>
+  <div>
+    <%= pluralize(@link.errors.count, "error") %> prevented this link from being created:
+    <ul>
+      <% @link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="pure-form">
+    <%= f.label :link_reference %><br>
+    <%= f.text_area :link_reference %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :communication_id %><br>
+    <%= f.text_field :communication_id %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :campaign_medium %><br>
+    <%= f.text_field :campaign_medium %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :campaign_source %><br>
+    <%= f.text_field :campaign_source %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :campaign_name %><br>
+    <%= f.text_field :campaign_name %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :utm_content %><br>
+    <%= f.text_field :utm_content %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :website_url %><br>
+    <%= f.text_field :website_url %>
+  </div>
+  <div class="pure-form">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+  </div>
+  <br />
+  <div>
+    <%= f.submit "Submit", class: "submit-button" %>
+  </div>
+<% end %>
