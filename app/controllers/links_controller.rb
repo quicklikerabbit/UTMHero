@@ -13,15 +13,17 @@ class LinksController < ApplicationController
   end
 
   def create
-    byebug
     @link = Link.new(link_params)
-    @link.client_id = Client.find_by(name: link_params[:client_id]).id
-    @link.save
-    if @link.save
-      redirect_to root_path, notice: "Link Created!"
+    if Client.find_by(name: link_params[:client_id]) == nil
+      @client = Client.new(name: link_params[:client_id])
+      @client.save
+      @link.client_id = @client.id
+      @link.save
     else
-      render :form, notice: "Link Not created"
+      @link.client_id = Client.find_by(name: link_params[:client_id]).id
+      @link.save
     end
+    redirect_to root_path, notice: "Link Created!"
   end
 
   def destroy
