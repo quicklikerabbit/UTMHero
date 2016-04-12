@@ -1,31 +1,12 @@
 Rails.application.routes.draw do
-  get 'clients/index'
 
-  get 'clients/show'
+  resources :users, only: [:new, :create, :edit, :index, :show]
 
-  get 'clients/new'
+  resources :clients, only: [:index, :show, :new, :create, :edit, :destroy]
 
-  get 'clients/edit'
+  resources :links, only: [:index, :show, :new, :create, :edit, :destroy]
 
-  get 'clients/destroy'
-
-  get 'links/index'
-
-  get 'links/show'
-
-  get 'links/new'
-
-  get 'links/edit'
-
-  get 'links/destroy'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/edit'
+  root to: 'links#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
