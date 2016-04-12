@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  link_reference: MyText
+  communication_id: MyString
+  campaign_medium: MyString
+  campaign_source: MyString
+  campaign_name: MyString
+  utm_content: MyString
+  short_link: MyString
+  website_url: MyString
+  client_id: 
+
+two:
+  link_reference: MyText
+  communication_id: MyString
+  campaign_medium: MyString
+  campaign_source: MyString
+  campaign_name: MyString
+  utm_content: MyString
+  short_link: MyString
+  website_url: MyString
+  client_id: 
