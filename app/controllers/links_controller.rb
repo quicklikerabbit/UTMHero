@@ -19,6 +19,7 @@ class LinksController < ApplicationController
       @client.save
       @link.client_id = @client.id
       @link.save
+      return @link.to_json
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save
