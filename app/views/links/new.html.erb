@@ -1,2 +1,7 @@
 <h1>Create Your Custom URL</h1>
 <%= render 'form' %>
+<div id="links">
+  <% if @utm_link %>
+    <%= render @utm_link %>
+  <% end %>
+</div>
