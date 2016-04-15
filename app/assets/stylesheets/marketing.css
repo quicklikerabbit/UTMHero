@@ -81,8 +81,8 @@ label {
     padding: 0.5em 2em;
     border-radius: 5px;
 }
-#pure-button {
-    background-color: #1f8dd6;
+#lndpg-submit-button {
+    background-color: #76BADF;
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
@@ -90,7 +90,7 @@ label {
 
 a.pure-button-primary {
     background: white;
-    color: #1f8dd6;
+    color: #76BADF;
     border-radius: 5px;
     font-size: 120%;
 }
@@ -127,13 +127,16 @@ a.pure-button-primary {
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: #76BADF;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
     color: #AECFE5;
+}
+.pure-menu-link {
+  color: #76BADF;
 }
 
 
