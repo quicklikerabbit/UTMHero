@@ -1,48 +1,134 @@
-<%= form_for @link, html: { multipart: true }, remote: true do |f| %>
-  <% if @link.errors.any? %>
-  <div>
-    <%= pluralize(@link.errors.count, "error") %> prevented this link from being created:
-    <ul>
-      <% @link.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<div class="content">
+  <div class="pure-g">
+    <div class="pure-u-1 pure-u-md-2-5">
+      <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
+        <% if @link.errors.any? %>
+        <div>
+          <%= pluralize(@link.errors.count, "error") %> prevented this link from being created:
+          <ul>
+            <% @link.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :client_id %><br>
+          <%= f.text_field :client_id %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+          <br />
+          <p>
+            Used to group URLs together by a common company. Use this field if you are
+            creating this link on behalf of another organization.
+            <br /><i>Example:</i> Helmkin Digital
+          </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :website_url, "Website URL" %><br>
+          <%= f.text_field :website_url %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          This is the intended destination when you click on the link.
+          <br /><i>Example:</i> <code>app.helmkin.com</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_source, "Campaign Source"%><br>
+          <%= f.text_field :campaign_source %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Use utm_source to identify a search engine, newsletter name,
+          or other source.
+          <br /><i>Example:</i> <code>utm_source=google</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_medium, "Campaign Medium" %><br>
+          <%= f.text_field :campaign_medium %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Use utm_medium to identify a medium such as email or
+          cost-per- click.
+          <br /><i>Example:</i> <code>utm_medium=cpc</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :communication_id, "Campaign Term" %><br>
+          <%= f.text_field :communication_id %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Used for paid search. Use utm_term to note the keywords for this ad.
+          <br /><i>Example:</i><code> utm_term=running+shoes</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :utm_content, "Campaign Content" %><br>
+          <%= f.text_field :utm_content %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Used for A/B testing and content-targeted ads. Use utm_content to
+          differentiate ads or links that point to the same URL.
+          <br /><i>Examples: </i><code>utm_content=logolink</code> <i> or </i>
+          <code>utm_content=textlink</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_name, "Campaign Name" %><br>
+          <%= f.text_field :campaign_name %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Used for keyword analysis. Use utm_campaign to identify a
+          specific product promotion or strategic campaign.
+          <br /><i>Example: </i><code>utm_campaign=spring_sale</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :link_reference, "Notes" %><br>
+          <%= f.text_field :link_reference %>
+        </div>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          This optional field allows you to add any additional information you need
+          to help keep track of who made this link or why it was made.
+          <br /><i>Example: </i>Gill; made to test orange banner
+        </p>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.submit "Submit", id: "lndpg-submit-button" %>
+      </div>
+    </div>
       <% end %>
-    </ul>
-  </div>
-  <% end %>
-  <div class="pure-form">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
-  </div>
-  <div class="pure-form">
-    <%= f.label :website_url %><br>
-    <%= f.text_field :website_url %>
-  </div>
-  <div class="pure-form">
-    <%= f.label :campaign_source %><br>
-    <%= f.text_field :campaign_source %>
-  </div>
-  <div class="pure-form">
-    <%= f.label :campaign_medium %><br>
-    <%= f.text_field :campaign_medium %>
-  </div>
-  <div class="pure-form">
-    <%= f.label "Campaign Term" %><br>
-    <%= f.text_field :communication_id %>
-  </div>
-  <div class="pure-form">
-    <%= f.label :utm_content %><br>
-    <%= f.text_field :utm_content %>
-  </div>
-  <div class="pure-form">
-    <%= f.label :campaign_name %><br>
-    <%= f.text_field :campaign_name %>
-  </div>
-  <div class="pure-form">
-    <%= f.label "Notes" %><br>
-    <%= f.text_area :link_reference %>
-  </div>
-  <br />
-  <div>
-    <%= f.submit "Submit", class: "submit-button" %>
-  </div>
-<% end %>
+
+
+    </div>
+</div>
