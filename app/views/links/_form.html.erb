@@ -28,20 +28,20 @@
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :website_url, "Website URL" %><br>
-          <%= f.text_field :website_url %>
+          <%= f.text_field :website_url, required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
         <br />
         <p>
-          This is the intended destination when you click on the link.
+          Required. This is the intended destination when you click on the link.
           <br /><i>Example:</i> <code>app.helmkin.com</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_source, "Campaign Source"%><br>
-          <%= f.text_field :campaign_source %>
+          <%= f.text_field :campaign_source, required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -55,7 +55,7 @@
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_medium, "Campaign Medium" %><br>
-          <%= f.text_field :campaign_medium %>
+          <%= f.text_field :campaign_medium, required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -75,7 +75,7 @@
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
         <br />
         <p>
-          Used for paid search. Use utm_term to note the keywords for this ad.
+          Optional. Used for paid search. Use utm_term to note the keywords for this ad.
           <br /><i>Example:</i><code> utm_term=running+shoes</code>
         </p>
       </div>
@@ -88,7 +88,7 @@
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
         <br />
         <p>
-          Used for A/B testing and content-targeted ads. Use utm_content to
+          Optional. Used for A/B testing and content-targeted ads. Use utm_content to
           differentiate ads or links that point to the same URL.
           <br /><i>Examples: </i><code>utm_content=logolink</code> <i> or </i>
           <code>utm_content=textlink</code>
@@ -97,7 +97,7 @@
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_name, "Campaign Name" %><br>
-          <%= f.text_field :campaign_name %>
+          <%= f.text_field :campaign_name, required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
