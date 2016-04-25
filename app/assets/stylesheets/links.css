@@ -1,0 +1,63 @@
+.hidden {
+  display: none;
+}
+
+#create-link-overlay {
+    background: #9E9E9E;
+    opacity: 0.9;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.create-link {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+.create-link p{
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* This is the main heading that appears on the blue section */
+.create-link-head {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+#links {
+  font-size: 20px;
+  font-family: "Courier New";
+  color: white;
+  word-break: break-all;
+  text-transform: lowercase;
+}
+
+#make-another {
+  background-color: #76BADF;
+  color: white;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  margin-top: 2em;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 1;
+}

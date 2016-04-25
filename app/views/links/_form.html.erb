@@ -14,7 +14,7 @@
         <% end %>
         <div class="pure-form pure-form-stacked">
           <%= f.label :client_id %><br>
-          <%= f.text_field :client_id %>
+          <%= f.text_field :client_id, value: "Helmkin" %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -28,7 +28,7 @@
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :website_url, "Website URL" %><br>
-          <%= f.text_field :website_url, required: true %>
+          <%= f.text_field :website_url, value:"app.helmin.com", required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -41,7 +41,7 @@
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_source, "Campaign Source"%><br>
-          <%= f.text_field :campaign_source, required: true %>
+          <%= f.text_field :campaign_source, value:"facebook", required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -49,13 +49,13 @@
         <p>
           Required. Use utm_source to identify a search engine, newsletter name,
           or other source.
-          <br /><i>Example:</i> <code>utm_source=google</code>
+          <br /><i>Example:</i> <code>google</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_medium, "Campaign Medium" %><br>
-          <%= f.text_field :campaign_medium, required: true %>
+          <%= f.text_field :campaign_medium, value:"cpc", required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -63,7 +63,7 @@
         <p>
           Required. Use utm_medium to identify a medium such as email or
           cost-per- click.
-          <br /><i>Example:</i> <code>utm_medium=cpc</code>
+          <br /><i>Example:</i> <code>cpc</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
@@ -76,7 +76,7 @@
         <br />
         <p>
           Optional. Used for paid search. Use utm_term to note the keywords for this ad.
-          <br /><i>Example:</i><code> utm_term=running+shoes</code>
+          <br /><i>Example:</i><code>running+shoes</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
@@ -90,14 +90,13 @@
         <p>
           Optional. Used for A/B testing and content-targeted ads. Use utm_content to
           differentiate ads or links that point to the same URL.
-          <br /><i>Examples: </i><code>utm_content=logolink</code> <i> or </i>
-          <code>utm_content=textlink</code>
+          <br /><i>Examples: </i><code>logolink</code> or <code>textlink</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_name, "Campaign Name" %><br>
-          <%= f.text_field :campaign_name, required: true %>
+          <%= f.text_field :campaign_name, value: "spring_sale", required: true %>
         </div>
       </div>
       <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
@@ -105,7 +104,7 @@
         <p>
           Required. Used for keyword analysis. Use utm_campaign to identify a
           specific product promotion or strategic campaign.
-          <br /><i>Example: </i><code>utm_campaign=spring_sale</code>
+          <br /><i>Example: </i><code>spring_sale</code>
         </p>
       </div>
       <div class="pure-u-1 pure-u-md-2-5">
@@ -128,7 +127,5 @@
       </div>
     </div>
       <% end %>
-
-
     </div>
 </div>
