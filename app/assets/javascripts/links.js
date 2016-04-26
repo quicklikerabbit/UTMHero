@@ -1,6 +1,5 @@
 $(function() {
-  var submitButton = $("#lndpg-submit-button");
-  submitButton.on('click',function(){
+  $( document ).ajaxComplete(function() {
     $('#create-link-overlay').removeClass('hidden');
   });
   var anotherOne = $("#make-another");
