@@ -10,6 +10,8 @@ class Link < ActiveRecord::Base
 
   after_create :make_utm_link
 
+  require 'uri'
+
   private
 
   def make_utm_link
@@ -30,11 +32,14 @@ class Link < ActiveRecord::Base
 
     if self.utm_content == ""
       utm_content = ""
+    elsif self.utm_content
+
     else
       utm_content = "&utm_content=#{self.utm_content}"
     end
     utm_campaign = "&utm_campaign=#{self.campaign_name}"
     self.utm_link = "#{website_url}#{utm_source}#{utm_medium}#{utm_term}#{utm_content}#{utm_campaign}"
+    self.utm_link = URI.escape(self.utm_link)
     self.save
   end
 
