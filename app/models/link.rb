@@ -23,17 +23,14 @@ class Link < ActiveRecord::Base
     end
     utm_source = "?utm_source=#{self.campaign_source}"
     utm_medium = "&utm_medium=#{self.campaign_medium}"
-
     if self.communication_id == ""
       utm_term = ""
     else
       utm_term = "&utm_term=#{self.communication_id}"
     end
-
     if self.utm_content == ""
       utm_content = ""
     elsif self.utm_content
-
     else
       utm_content = "&utm_content=#{self.utm_content}"
     end
