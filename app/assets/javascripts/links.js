@@ -5,10 +5,13 @@ $(function() {
     }, 1000);
   });
   $( document ).ajaxComplete(function() {
-    $('#create-link-overlay').removeClass('hidden');
+    $('#create-link-overlay').removeClass('hidden').fadeTo(500, 0.9);
   });
   var anotherOne = $("#make-another");
+  var createLinkOverlay = $('#create-link-overlay');
   anotherOne.on('click',function(){
-    $('#create-link-overlay').addClass('hidden');
+    createLinkOverlay.fadeTo(500, 0.0, function(){
+      createLinkOverlay.addClass('hidden');
+    });
   });
 });
