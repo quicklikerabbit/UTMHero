@@ -1,2 +1,55 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="Content">
+  <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <a class="pure-menu-heading" href="/">UTM Hero</a>
+
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+              <li class="pure-menu-item pure-menu-selected"><a href="<%= new_user_path %>" class="pure-menu-link">Sign Up</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="pure-g">
+    <h1>Sign Up</h1>
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div>
+          <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <br />
+      <% end %>
+    <% end %>
+    <%= form_tag users_path do %>
+      <div class="pure-form pure-form-stacked">
+        <input class="input" name="user[email]" type="email" placeholder="Email">
+        <i class="fa fa-envelope"></i>
+      </div>
+      <div class="pure-form pure-form-stacked">
+        <input class="input" name="user[first_name]" type="text" placeholder="First Name">
+        <i class="fa fa-terminal"></i>
+      </div>
+      <div class="pure-form pure-form-stacked">
+        <input class="input" name="user[last_name]" type="text" placeholder="Last Name">
+        <i class="fa fa-terminal"></i>
+      </div>
+      <div class="pure-form pure-form-stacked">
+        <input class="input" name="user[password]" type="password" placeholder="Password">
+        <i class="fa fa-lock"></i>
+      </div>
+      <div class="pure-form pure-form-stacked">
+        <input class="input" name="user[password_confirmation]" type="password" placeholder="Password Confirmation">
+        <i class="fa fa-lock"></i>
+      </div>
+      <div class="pure-form pure-form-stacked">
+        <button class="button is-success">
+          Submit
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>
