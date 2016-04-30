@@ -33,6 +33,8 @@ gem 'rails_12factor', group: :production
 
 gem 'byebug', '2.4.1'
 
+gem 'puma'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
