@@ -23,29 +23,15 @@
         </div>
       <br />
       <% end %>
-    <% end %>
-    <%= form_tag users_path do %>
       <div class="pure-form pure-form-stacked">
-        <input class="input" name="user[email]" type="email" placeholder="Email">
-        <i class="fa fa-envelope"></i>
-      </div>
-      <div class="pure-form pure-form-stacked">
-        <input class="input" name="user[first_name]" type="text" placeholder="First Name">
-        <i class="fa fa-terminal"></i>
-      </div>
-      <div class="pure-form pure-form-stacked">
-        <input class="input" name="user[last_name]" type="text" placeholder="Last Name">
-        <i class="fa fa-terminal"></i>
-      </div>
-      <div class="pure-form pure-form-stacked">
-        <input class="input" name="user[password]" type="password" placeholder="Password">
-        <i class="fa fa-lock"></i>
-      </div>
-      <div class="pure-form pure-form-stacked">
-        <input class="input" name="user[password_confirmation]" type="password" placeholder="Password Confirmation">
-        <i class="fa fa-lock"></i>
-      </div>
-      <div class="pure-form pure-form-stacked">
+        <%= f.label :first_name, "First Name" %><br>
+        <%= f.text_field :first_name, required: true %>
+        <%= f.label :last_name, "Last Name" %><br>
+        <%= f.text_field :last_name, required: true %>
+        <%= f.label :email, "email" %><br>
+        <%= f.text_field :email, required: true %>
+        <%= f.label :first_name, "First Name" %><br>
+        <%= f.text_field :first_name, required: true %>
         <button class="button is-success">
           Submit
         </button>

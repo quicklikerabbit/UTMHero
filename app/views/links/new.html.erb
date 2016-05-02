@@ -1,22 +1,34 @@
-<div class="splash-container">
-  <div class="splash">
-    <h1 class="splash-head">Create Your Custom URL</h1>
-    <button id="get-started-button">Get Started</button>
-  </div>
-</div>
+<div class="Content">
+  <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <a class="pure-menu-heading" href="/">UTM Hero</a>
 
-<div id="create-link-overlay" class="hidden">
-  <div class="create-link">
-    <h1 class="create-link-head">Here ya go!</h1>
-      <div id="links">
-
+          <ul class="pure-menu-list">
+              <li class="pure-menu-item pure-menu-selected"><a href="/" class="pure-menu-link">Home</a></li>
+              <li class="pure-menu-item"><a href="<%= new_user_path %>" class="pure-menu-link">Sign Up</a></li>
+          </ul>
       </div>
-      <button id="make-another">Make Anonther Link</button>
   </div>
-</div>
+  <div class="splash-container">
+    <div class="splash">
+      <h1 class="splash-head">Create Your Custom URL</h1>
+      <button id="get-started-button">Get Started</button>
+    </div>
+  </div>
 
-<div class="content-wrapper">
-  <div id="link-form"class="content">
-    <%= render 'form' %>
+  <div id="create-link-overlay" class="hidden">
+    <div class="create-link">
+      <h1 class="create-link-head">Here ya go!</h1>
+        <div id="links">
+
+        </div>
+        <button id="make-another">Make Anonther Link</button>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div id="link-form"class="content">
+      <%= render 'form' %>
+    </div>
   </div>
 </div>
