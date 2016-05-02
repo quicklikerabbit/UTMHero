@@ -48,6 +48,11 @@ label {
     text-align: center;
 }
 
+.centered {
+    display: table;
+    margin: 0 auto;
+}
+
 /*
  * -- PURE FORM STYLES --
  * Style the form inputs and labels

@@ -1,2 +1,33 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="pure-g">
+  <div class="l-box-lrg pure-u-1 centered">
+    <h1 class="header">Sign Up</h1>
+    <h3>Already have an account? Log in <a href="<%= new_session_path %>">here</a></h3>
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div>
+          <%= pluralize(@user.errors.count, "error") %> prevented the account from being created:
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <br />
+      <% end %>
+      <div class="pure-form pure-form-stacked">
+        <%= f.label :first_name, "First Name" %><br>
+        <%= f.text_field :first_name %>
+        <%= f.label :last_name, "Last Name" %><br>
+        <%= f.text_field :last_name %>
+        <%= f.label :email, "Email" %><br>
+        <%= f.text_field :email %>
+        <%= f.label :password, "Password" %><br>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation, "Confirm Password" %><br>
+        <%= f.password_field :password_confirmation %>
+        <br />
+        <%= f.submit "Submit", class: "pure-button pure-button-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
