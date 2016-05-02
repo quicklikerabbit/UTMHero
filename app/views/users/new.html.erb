@@ -1,16 +1,7 @@
-<div class="Content">
-  <div class="header">
-      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-          <a class="pure-menu-heading" href="/">UTM Hero</a>
-
-          <ul class="pure-menu-list">
-              <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
-              <li class="pure-menu-item pure-menu-selected"><a href="<%= new_user_path %>" class="pure-menu-link">Sign Up</a></li>
-          </ul>
-      </div>
-  </div>
-  <div class="pure-g">
-    <h1>Sign Up</h1>
+<div class="pure-g">
+  <div class="l-box-lrg pure-u-1 centered">
+    <h1 class="header">Sign Up</h1>
+    <h3>Already have an account? Log in <a href="<%= new_session_path %>">here</a></h3>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div>
@@ -25,16 +16,17 @@
       <% end %>
       <div class="pure-form pure-form-stacked">
         <%= f.label :first_name, "First Name" %><br>
-        <%= f.text_field :first_name, required: true %>
+        <%= f.text_field :first_name %>
         <%= f.label :last_name, "Last Name" %><br>
-        <%= f.text_field :last_name, required: true %>
-        <%= f.label :email, "email" %><br>
-        <%= f.text_field :email, required: true %>
-        <%= f.label :first_name, "First Name" %><br>
-        <%= f.text_field :first_name, required: true %>
-        <button class="button is-success">
-          Submit
-        </button>
+        <%= f.text_field :last_name %>
+        <%= f.label :email, "Email" %><br>
+        <%= f.text_field :email %>
+        <%= f.label :password, "Password" %><br>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation, "Confirm Password" %><br>
+        <%= f.password_field :password_confirmation %>
+        <br />
+        <%= f.submit "Submit", class: "pure-button pure-button-primary" %>
       </div>
     <% end %>
   </div>
