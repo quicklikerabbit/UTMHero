@@ -1,0 +1,9 @@
+.flash{
+ position: fixed;
+ max-width:600px;
+ top:20px;
+ right:20px;
+ height:40px;
+ z-index: 4;
+ background: #2d3e50;
+}

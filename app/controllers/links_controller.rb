@@ -26,7 +26,7 @@ class LinksController < ApplicationController
       @link.save
     end
     respond_to do |format|
-      format.html { redirect_to @utm_link, notice: 'Link was successfully created.' }
+      format.html { redirect_to @utm_link }
       format.js   {}
       format.json { render json: @utm_link, status: :created, location: @utm_link }
     end
