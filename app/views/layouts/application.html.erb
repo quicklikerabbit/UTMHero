@@ -11,17 +11,23 @@
   <div class="Content">
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="/">UTM Hero</a>
-
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item <%= current_page?('/') ? 'pure-menu-selected' : '' %>"><a href="/" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item <%= current_page?('/users/new') ? 'pure-menu-selected' : '' %> "><a href="<%= new_user_path %>" class="pure-menu-link">Sign Up</a></li>
-                <li class="pure-menu-item <%= current_page?('/sessions/new') ? 'pure-menu-selected' : '' %> "><a href="<%= new_session_path %>" class="pure-menu-link">Log In</a></li>
-            </ul>
+          <a class="pure-menu-heading" href="/">UTM Hero</a>
+          <ul class="pure-menu-list">
+            <li class="pure-menu-item <%= current_page?('/') ? 'pure-menu-selected' : '' %>"><a href="/" class="pure-menu-link">Home</a></li>
+            <% if current_user %>
+              <li class="pure-menu-item"><%= link_to "Log out", session_path("current"), method: :delete, class:"pure-menu-link" %></li>
+            <% else %>
+              <li class="pure-menu-item <%= current_page?('/users/new') ? 'pure-menu-selected' : '' %> "><a href="<%= new_user_path %>" class="pure-menu-link">Sign Up</a></li>
+              <li class="pure-menu-item <%= current_page?('/sessions/new') ? 'pure-menu-selected' : '' %> "><a href="<%= new_session_path %>" class="pure-menu-link">Log In</a></li>
+            <% end %>
+          </ul>
         </div>
     </div>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value) %>
+    <% end %>
 
-<%= yield %>
+    <%= yield %>
 </div>
 
 </body>
