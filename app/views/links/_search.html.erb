@@ -1,0 +1,6 @@
+  <%= form_tag(links_search_path, remote: true, id:"search_form") do %>
+    <%= label_tag(:search_term, "Search for:") %>
+    <%= text_field_tag(:search_term) %>
+    <%= select_tag :client_search, "<option></option><%=".html_safe %>
+    <%= submit_tag("Search") %>
+  <% end %>

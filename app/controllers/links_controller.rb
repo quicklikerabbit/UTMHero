@@ -4,7 +4,8 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
-    @links = Link.all    
+    @links = Link.all
+    @ten_links = Link.all.order('created_at DESC').take(10)
   end
 
   def show
@@ -12,6 +13,18 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
+  end
+
+  def search
+    @links = link.all
+    @links = @links.search_link_attributes(params[:search_term])
+
+    if params[:runtime_search] 
+    end
+
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def edit
