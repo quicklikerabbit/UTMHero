@@ -1,7 +1,10 @@
 class LinksController < ApplicationController
+  include ApplicationHelper
   respond_to :html, :js
 
   def index
+    require_logged_in_user
+    @links = Link.all    
   end
 
   def show
