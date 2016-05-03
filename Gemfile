@@ -35,6 +35,9 @@ gem 'byebug', '2.4.1'
 
 gem 'puma'
 
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
