@@ -13,7 +13,7 @@ class Link < ActiveRecord::Base
   require 'uri'
 
   scope :search_link_attributes, -> (search) { where('link_reference LIKE :query OR communication_id LIKE :query OR campaign_medium LIKE :query OR campaign_source LIKE :query OR campaign_name LIKE :query OR utm_content LIKE :query OR website_url LIKE :query', query: "%#{search}%") }
-  scope :client_search, -> (search) { where('title LIKE :query OR director LIKE :query', query: "%#{search}%") }
+  scope :client_search, -> (search) { where('client_id LIKE :query', query: "%#{search}%") }
 
   private
 
