@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  post '/links/search', to: 'links#search'
+
   get 'sessions/new'
 
   get 'sessions/create'
