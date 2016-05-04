@@ -4,8 +4,10 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
-    @links = Link.all
-    @clients = Client.all
+
+    @client_links = SiteUser.where(user_id: current_user.id).pluck(:site_id)
+    @links = Site.where(id: @users_sites).order(created_at: :desc)
+
   end
 
   def show
@@ -13,19 +15,6 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-  end
-
-  def search
-    @links = Link.all
-    @links = @links.search_link_attributes(params[:search_term])
-
-    if params[:client_search]
-      @links = @links.where(client_id: params[:client_search])
-    end
-
-    respond_to do |format|
-      format.js {}
-    end
   end
 
   def edit
