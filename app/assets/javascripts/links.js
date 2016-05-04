@@ -14,4 +14,7 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
+  $('#links_table').DataTable({
+    responsive: true
+  });
 });

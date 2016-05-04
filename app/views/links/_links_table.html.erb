@@ -1,7 +1,6 @@
 <table id="links_table" class="pure-table">
   <thead>
       <tr>
-          <th>#</th>
           <th>Client</th>
           <th>Website URL</th>
           <th>Campaign Source</th>
@@ -13,10 +12,8 @@
       </tr>
   </thead>
   <tbody>
-    <% number = 1 %>
     <% @links.each do |link| %>
       <tr>
-          <td><%= number %></td>
           <td><%= link.client_id %></td>
           <td><%= link.website_url %></td>
           <td><%= link.campaign_source %></td>
@@ -26,7 +23,6 @@
           <td><%= link.campaign_name %></td>
           <td><%= link.link_reference %></td>
       </tr>
-    <% number += 1 %>
   <% end %>
   </tbody>
 </table>

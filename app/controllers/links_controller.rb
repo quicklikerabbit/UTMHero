@@ -4,7 +4,7 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
-    @links = Link.all.order('created_at DESC').take(10)
+    @links = Link.all
     @clients = Client.all
   end
 
