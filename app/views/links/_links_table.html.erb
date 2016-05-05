@@ -2,6 +2,7 @@
   <thead>
       <tr>
           <th>Client</th>
+          <th>Made By</th>
           <th>Website URL</th>
           <th>Campaign Source</th>
           <th>Campaign Medium</th>
@@ -9,11 +10,14 @@
           <th>Campaign Content</th>
           <th>Campaign Name</th>
           <th>Notes</th>
+          <th>UTM Link</th>
       </tr>
   </thead>
   <tfoot>
     <tr>
       <th>Client</th>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -27,6 +31,7 @@
     <% @links.each do |link| %>
       <tr>
           <td><%= link.client_id %></td>
+          <td><%= link.user_id %></td>
           <td><%= link.website_url %></td>
           <td><%= link.campaign_source %></td>
           <td><%= link.campaign_medium %></td>
@@ -34,6 +39,7 @@
           <td><%= link.utm_content %></td>
           <td><%= link.campaign_name %></td>
           <td><%= link.link_reference %></td>
+          <td><%= link.utm_link %></td>
       </tr>
   <% end %>
   </tbody>

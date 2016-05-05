@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'client_users/new'
+
+  get 'client_users/create'
+
+  get 'client_users/destroy'
+
   post '/links/search', to: 'links#search'
 
   get 'sessions/new'

@@ -5,8 +5,12 @@ class LinksController < ApplicationController
   def index
     require_logged_in_user
 
-    @client_links = SiteUser.where(user_id: current_user.id).pluck(:site_id)
-    @links = Site.where(id: @users_sites).order(created_at: :desc)
+    # @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
+    # @links = Link.where(id: @client_links).order(created_at: :desc)
+    @links = Link.all
+    
+    @clients = Client.all
+
 
   end
 
@@ -27,6 +31,12 @@ class LinksController < ApplicationController
       @client.save
       @link.client_id = @client.id
       @link.save
+      if current_user
+        ClientUser.create(
+          client_id: @client.id,
+          user_id: current_user.id
+          )
+      end
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save

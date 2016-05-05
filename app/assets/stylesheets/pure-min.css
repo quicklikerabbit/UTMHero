@@ -158,7 +158,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: auto
 }
 input[type=search] {
-    -webkit-appearance: textfield;
+    -webkit-appearance: searchfield;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box

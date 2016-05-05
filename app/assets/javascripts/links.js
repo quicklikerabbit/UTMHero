@@ -14,8 +14,9 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
-  var indexOfMyCol = 0;
-  $('#links_table').DataTable( {
+  $( '#links_table').DataTable( {
+      "scrollX": true,
+      "sDom": '<"top"fli>rt<"bottom"p><"clear">',
       initComplete: function () {
         this.api().columns(0).every( function () {
           var column = this;
