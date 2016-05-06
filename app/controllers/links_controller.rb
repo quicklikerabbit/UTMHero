@@ -7,9 +7,13 @@ class LinksController < ApplicationController
 
     # @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
     # @links = Link.where(id: @client_links).order(created_at: :desc)
+
     @links = Link.all
-    
     @clients = Client.all
+    @client_names = []
+    @links.each do |link|
+      @client_names.push(@clients.find(link.client_id).name)
+    end
 
 
   end

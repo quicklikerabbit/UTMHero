@@ -7,6 +7,7 @@ class Link < ActiveRecord::Base
   validates :campaign_source, presence: true
 
   belongs_to :client
+  belongs_to :user
 
   after_create :make_utm_link
 
