@@ -8,13 +8,16 @@ class LinksController < ApplicationController
     # @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
     # @links = Link.where(id: @client_links).order(created_at: :desc)
 
+    @link = Link.new
     @links = Link.all
     @clients = Client.all
     @users = User.all
+    @created_times = []
     @client_names = []
     @user_names = []
     @links.each do |link|
       @client_names.push(@clients.find(link.client_id).name)
+      @created_times.push(local_time(link.created_at))
       if link.user_id
         @user_names.push(@users.find(link.user_id).first_name)
       end

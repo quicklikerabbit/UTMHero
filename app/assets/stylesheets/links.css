@@ -17,6 +17,12 @@
     padding: 0.5em 2em;
     border-radius: 5px;
 }
+#index-page-submit-button {
+    background-color: #76BADF;
+    color: white;
+    padding: 0.5em 2em;
+    border-radius: 5px;
+}
 #get-started-button {
     background: none;
     color: white;

@@ -11,4 +11,10 @@ module ApplicationHelper
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def local_time(utc_time)
+    time = utc_time.in_time_zone("Pacific Time (US & Canada)")
+    time.strftime("%b %e %Y, %l:%M %p")
+  end
+
+
 end

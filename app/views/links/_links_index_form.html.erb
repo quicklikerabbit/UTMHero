@@ -1,0 +1,22 @@
+<%= form_for @link, html: { multipart: true }, remote: true do |f| %>
+  <div class="pure-form">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+    <%= f.label :website_url, "Website URL" %>
+    <%= f.text_field :website_url, required: true %>
+    <%= f.label :campaign_source, "Campaign Source"%>
+    <%= f.text_field :campaign_source, required: true %>
+    <%= f.label :campaign_medium, "Campaign Medium" %>
+    <%= f.text_field :campaign_medium, required: true %>
+    <%= f.label :communication_id, "Campaign Term" %>
+    <%= f.text_field :communication_id %>
+    <%= f.label :utm_content, "Campaign Content" %>
+    <%= f.text_field :utm_content %>
+    <%= f.label :campaign_name, "Campaign Name" %>
+    <%= f.text_field :campaign_name, required: true %>
+    <%= f.label :link_reference, "Notes" %>
+    <%= f.text_field :link_reference %>
+    <br />
+    <%= f.submit "Submit", id: "index-page-submit-button" %>
+  </div>
+<% end %>
