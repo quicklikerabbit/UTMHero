@@ -9,6 +9,7 @@ class LinksController < ApplicationController
     # @links = Link.where(id: @client_links).order(created_at: :desc)
 
     @links = Link.all
+    byebug
     @clients = Client.all
     @client_names = []
     @links.each do |link|

@@ -28,18 +28,18 @@
     </tr>
   </tfoot>
   <tbody>
-    <% @links.each do |link| %>
+    <% (0..@links.length).each do |i| %>
       <tr>
-          <td><%= link.client_id %></td>
-          <td><%= link.user_id %></td>
-          <td><%= link.website_url %></td>
-          <td><%= link.campaign_source %></td>
-          <td><%= link.campaign_medium %></td>
-          <td><%= link.communication_id %></td>
-          <td><%= link.utm_content %></td>
-          <td><%= link.campaign_name %></td>
-          <td><%= link.link_reference %></td>
-          <td><%= link.utm_link %></td>
+          <td><%= @client_names[i] %></td>
+          <td><%= @links[i].user_id %></td>
+          <td><%= @links[i].website_url %></td>
+          <td><%= @links[i].campaign_source %></td>
+          <td><%= @links[i].campaign_medium %></td>
+          <td><%= @links[i].communication_id %></td>
+          <td><%= @links[i].utm_content %></td>
+          <td><%= @links[i].campaign_name %></td>
+          <td><%= @links[i].link_reference %></td>
+          <td><%= @links[i].utm_link %></td>
       </tr>
   <% end %>
   </tbody>
