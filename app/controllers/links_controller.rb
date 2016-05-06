@@ -4,8 +4,23 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
-    @links = Link.all.order('created_at DESC').take(10)
+
+    # @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
+    # @links = Link.where(id: @client_links).order(created_at: :desc)
+
+    @links = Link.all
     @clients = Client.all
+    @users = User.all
+    @client_names = []
+    @user_names = []
+    @links.each do |link|
+      @client_names.push(@clients.find(link.client_id).name)
+      if link.user_id
+        @user_names.push(@users.find(link.user_id).first_name)
+      end
+    end
+
+
   end
 
   def show
@@ -13,19 +28,6 @@ class LinksController < ApplicationController
 
   def new
     @link = Link.new
-  end
-
-  def search
-    @links = Link.all
-    @links = @links.search_link_attributes(params[:search_term])
-
-    if params[:client_search]
-      @links = @links.where(client_id: params[:client_search])
-    end
-
-    respond_to do |format|
-      format.js {}
-    end
   end
 
   def edit
@@ -38,6 +40,12 @@ class LinksController < ApplicationController
       @client.save
       @link.client_id = @client.id
       @link.save
+      if current_user
+        ClientUser.create(
+          client_id: @client.id,
+          user_id: current_user.id
+          )
+      end
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save

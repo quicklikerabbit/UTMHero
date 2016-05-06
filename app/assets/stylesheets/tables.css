@@ -1,0 +1,10 @@
+#links_table_filter{
+  float: left;
+  padding-right: 0.5em;
+}
+#links_table_wrapper{
+  max-width: 900px;
+}
+.dataTables_scrollHead{
+  text-align: left;
+}

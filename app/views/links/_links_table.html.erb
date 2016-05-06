@@ -1,8 +1,8 @@
-<table id="links_table" class="pure-table">
+<table id="links_table" class="display compact">
   <thead>
       <tr>
-          <th>#</th>
           <th>Client</th>
+          <th>Made By</th>
           <th>Website URL</th>
           <th>Campaign Source</th>
           <th>Campaign Medium</th>
@@ -10,23 +10,39 @@
           <th>Campaign Content</th>
           <th>Campaign Name</th>
           <th>Notes</th>
+          <th>UTM Link</th>
       </tr>
   </thead>
+  <tfoot>
+    <tr>
+      <th>Client</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </tfoot>
   <tbody>
-    <% number = 1 %>
-    <% @links.each do |link| %>
-      <tr>
-          <td><%= number %></td>
-          <td><%= link.client_id %></td>
-          <td><%= link.website_url %></td>
-          <td><%= link.campaign_source %></td>
-          <td><%= link.campaign_medium %></td>
-          <td><%= link.communication_id %></td>
-          <td><%= link.utm_content %></td>
-          <td><%= link.campaign_name %></td>
-          <td><%= link.link_reference %></td>
-      </tr>
-    <% number += 1 %>
+    <% (0..@links.length).each do |i| %>
+      <% if @links[i] %>
+        <tr>
+            <td><%= @client_names[i] %></td>
+            <td><%= @user_names[i] %></td>
+            <td><%= @links[i].website_url %></td>
+            <td><%= @links[i].campaign_source %></td>
+            <td><%= @links[i].campaign_medium %></td>
+            <td><%= @links[i].communication_id %></td>
+            <td><%= @links[i].utm_content %></td>
+            <td><%= @links[i].campaign_name %></td>
+            <td><%= @links[i].link_reference %></td>
+            <td><%= @links[i].utm_link %></td>
+        </tr>
+      <% end %>
   <% end %>
   </tbody>
 </table>
