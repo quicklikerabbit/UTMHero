@@ -10,9 +10,14 @@ class LinksController < ApplicationController
 
     @links = Link.all
     @clients = Client.all
+    @users = User.all
     @client_names = []
+    @user_names = []
     @links.each do |link|
       @client_names.push(@clients.find(link.client_id).name)
+      if link.user_id
+        @user_names.push(@users.find(link.user_id).first_name)
+      end
     end
 
 
