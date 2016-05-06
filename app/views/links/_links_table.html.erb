@@ -29,18 +29,20 @@
   </tfoot>
   <tbody>
     <% (0..@links.length).each do |i| %>
-      <tr>
-          <td><%= @client_names[i] %></td>
-          <td><%= @links[i].user_id %></td>
-          <td><%= @links[i].website_url %></td>
-          <td><%= @links[i].campaign_source %></td>
-          <td><%= @links[i].campaign_medium %></td>
-          <td><%= @links[i].communication_id %></td>
-          <td><%= @links[i].utm_content %></td>
-          <td><%= @links[i].campaign_name %></td>
-          <td><%= @links[i].link_reference %></td>
-          <td><%= @links[i].utm_link %></td>
-      </tr>
+      <% if @links[i] %>
+        <tr>
+            <td><%= @client_names[i] %></td>
+            <td><%= @links[i].user_id %></td>
+            <td><%= @links[i].website_url %></td>
+            <td><%= @links[i].campaign_source %></td>
+            <td><%= @links[i].campaign_medium %></td>
+            <td><%= @links[i].communication_id %></td>
+            <td><%= @links[i].utm_content %></td>
+            <td><%= @links[i].campaign_name %></td>
+            <td><%= @links[i].link_reference %></td>
+            <td><%= @links[i].utm_link %></td>
+        </tr>
+      <% end %>
   <% end %>
   </tbody>
 </table>
