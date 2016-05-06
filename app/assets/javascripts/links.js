@@ -36,9 +36,4 @@ $(function() {
         });
       }
   });
-  $("#index-page-submit-button").click(function(){
-    table
-      .draw()
-      .order( [[ 3, 'desc' ]] );
-    });
 });
