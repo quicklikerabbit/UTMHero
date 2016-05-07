@@ -7,12 +7,13 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to links_path
     else
       redirect_to new_session_path, notice: "There was a problem logging you in, please check your credentials"
     end
 
     def destroy
+      byebug
       reset_session
       redirect_to root_path, notice: "You've successfully signed out."
     end
