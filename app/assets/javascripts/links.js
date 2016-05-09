@@ -18,6 +18,7 @@ $(function() {
 $(function() {
   $( '#links_table').DataTable( {
       "scrollX": true,
+      "order": [[ 2, "desc" ]],
       "sDom": '<"top"fli>rt<"bottom"p><"clear">',
       initComplete: function () {
         this.api().columns(0).every( function () {
