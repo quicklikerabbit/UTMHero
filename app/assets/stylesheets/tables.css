@@ -3,7 +3,7 @@
   padding-right: 0.5em;
 }
 #links_table_wrapper{
-  max-width: 900px;
+  max-width: 100%;
 }
 .dataTables_scrollHead{
   text-align: left;
