@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-
+    byebug
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to links_path
+      redirect_to links_path, notice: "Hey there, #{user.first_name}!"
     else
       redirect_to new_session_path, notice: "There was a problem logging you in, please check your credentials"
     end
