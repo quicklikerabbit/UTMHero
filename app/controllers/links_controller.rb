@@ -4,22 +4,28 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
+    if current_user
+      @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
+      @links = Link.where(client_id: @client_links).order(created_at: :desc)
 
-    # @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
-    # @links = Link.where(id: @client_links).order(created_at: :desc)
+      @link = Link.new
+      @clients = Client.all
+      @users = User.all
+      @last_link = Link.last
 
-    @link = Link.new
-    @links = Link.all
-    @clients = Client.all
-    @users = User.all
-    @created_times = []
-    @client_names = []
-    @user_names = []
-    @links.each do |link|
-      @client_names.push(@clients.find(link.client_id).name)
-      @created_times.push(local_time(link.created_at))
-      if link.user_id
-        @user_names.push(@users.find(link.user_id).first_name)
+      if @clients.count > 0
+        @client_name = @clients.find(@last_link.client_id).name
+      end
+
+      @created_times = []
+      @client_names = []
+      @user_names = []
+      @links.each do |link|
+        @client_names.push(@clients.find(link.client_id).name)
+        @created_times.push(local_time(link.created_at))
+        if link.user_id
+          @user_names.push(@users.find(link.user_id).first_name)
+        end
       end
     end
 
@@ -48,15 +54,26 @@ class LinksController < ApplicationController
           client_id: @client.id,
           user_id: current_user.id
           )
+        @link.user_id = current_user.id
+        @link.save
+      else
+
       end
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save
+      if current_user
+        @link.user_id = current_user.id
+      else
+        @link.user_id = nil
+      end
+      @link.save
     end
+
     respond_to do |format|
-      format.html { redirect_to @utm_link }
-      format.js   {}
-      format.json { render json: @utm_link, status: :created, location: @utm_link }
+      format.html
+      format.js
+      format.json
     end
 
   end

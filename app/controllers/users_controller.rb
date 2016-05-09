@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id # auto log in
-      redirect_to root_path, notice: "Hey there, #{@user.first_name}!"
+      redirect_to links_path, notice: "Hey there, #{@user.first_name}!"
     else
       render :new
     end
