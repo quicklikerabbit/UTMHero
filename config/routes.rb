@@ -8,12 +8,6 @@ Rails.application.routes.draw do
 
   post '/links/search', to: 'links#search'
 
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
   resources :users, only: [:new, :create, :edit, :index, :show]
 
   resources :clients, only: [:index, :show, :new, :create, :edit, :destroy]
