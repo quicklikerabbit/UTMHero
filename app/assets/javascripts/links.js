@@ -14,7 +14,9 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
-  var table = $( '#links_table').DataTable( {
+});
+$(function() {
+  $( '#links_table').DataTable( {
       "scrollX": true,
       "sDom": '<"top"fli>rt<"bottom"p><"clear">',
       initComplete: function () {

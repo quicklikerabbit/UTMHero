@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :links, only: [:index, :show, :new, :create, :edit, :destroy]
 
-  resources :session, only: [:new, :create, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'links#new'
 

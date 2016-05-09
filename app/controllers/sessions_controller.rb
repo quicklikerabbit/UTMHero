@@ -11,11 +11,10 @@ class SessionsController < ApplicationController
     else
       redirect_to new_session_path, notice: "There was a problem logging you in, please check your credentials"
     end
+  end
 
-    def destroy
-      byebug
-      reset_session
-      redirect_to root_path, notice: "You've successfully signed out."
-    end
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: "You've successfully signed out."
   end
 end
