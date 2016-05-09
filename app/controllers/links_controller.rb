@@ -56,11 +56,17 @@ class LinksController < ApplicationController
           )
         @link.user_id = current_user.id
         @link.save
+      else
+
       end
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save
-      @link.user_id = current_user.id
+      if current_user
+        @link.user_id = current_user.id
+      else
+        @link.user_id = nil
+      end
       @link.save
     end
 
