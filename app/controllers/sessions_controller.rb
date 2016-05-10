@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
         @new_links = Link.where("created_at > ?", session[:start_time])
         @new_links.each do |new_link|
           new_link.user_id = user.id
+          new_link.save
           if @client_users.find_by(client_id: new_link.client_id) == nil
             ClientUser.create(
               client_id: new_link.client_id,

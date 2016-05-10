@@ -18,7 +18,6 @@ class UsersController < ApplicationController
         @client_users = ClientUser.all
         @new_links = Link.where("created_at > ?", session[:start_time])
         @new_links.each do |new_link|
-          byebug
           new_link.user_id = @user.id
           new_link.save
           ClientUser.create(
