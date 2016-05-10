@@ -44,6 +44,10 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.create(link_params)
+    if current_user == nil
+      session[:start_time] ||= Time.now
+    end
+
     if Client.find_by(name: link_params[:client_id]) == nil
       @client = Client.new(name: link_params[:client_id])
       @client.save
