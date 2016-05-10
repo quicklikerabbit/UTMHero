@@ -14,6 +14,12 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
+  var close = $("#close-button");
+  close.on('click', function(){
+    createLinkOverlay.fadeTo(500, 0.0, function(){
+      createLinkOverlay.addClass('hidden');
+    });
+  });
 });
 $(function() {
   $( '#links_table').DataTable( {

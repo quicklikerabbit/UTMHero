@@ -14,6 +14,18 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id # auto log in
+      if session[:start_time]
+        @client_users = ClientUser.all
+        @new_links = Link.where("created_at > ?", session[:start_time])
+        @new_links.each do |new_link|
+          new_link.user_id = @user.id
+          new_link.save
+          ClientUser.create(
+            client_id: new_link.client_id,
+            user_id: new_link.user_id
+            )
+        end
+      end
       redirect_to links_path, notice: "Hey there, #{@user.first_name}!"
     else
       render :new
