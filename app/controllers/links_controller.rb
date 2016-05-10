@@ -66,12 +66,6 @@ class LinksController < ApplicationController
     else
       @link.client_id = Client.find_by(name: link_params[:client_id]).id
       @link.save
-      if current_user
-        @link.user_id = current_user.id
-      else
-        @link.user_id = nil
-      end
-      @link.save
     end
 
     respond_to do |format|

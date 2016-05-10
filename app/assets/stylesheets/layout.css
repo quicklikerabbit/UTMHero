@@ -13,3 +13,11 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   }
 }
+
+#close-button{
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 20px;
+  position: fixed;
+}
