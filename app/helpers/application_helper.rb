@@ -18,13 +18,13 @@ module ApplicationHelper
 
   def assign_links_to_user(user)
     byebug
-    if session[:start_time]
-      clients = Client.where("created_by = ?", @user_info)
+    if session[:user_info]
+      clients = Client.where("created_by = ?", session[:user_info])
       clients.each do |client|
         client.created_by = user.id
         client.save
       end
-      @new_links = Link.where("created_by = ?", @user_info)
+      @new_links = Link.where("created_by = ?", session[:user_info])
       @new_links.each do |new_link|
         new_link.user_id = user.id
         new_link.save

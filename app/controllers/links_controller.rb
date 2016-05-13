@@ -47,8 +47,8 @@ class LinksController < ApplicationController
       @link.user_id = @user_info
       @link.save
     else
-      session[:start_time] ||= Time.now
       @user_info = session.id
+      session[:user_info] = session.id
       @link.created_by = @user_info
       @link.save
     end
