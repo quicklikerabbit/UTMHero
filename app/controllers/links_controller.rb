@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+
   include ApplicationHelper
   respond_to :html, :js
 
@@ -41,7 +42,6 @@ class LinksController < ApplicationController
   end
 
   def create
-    byebug
     @link = Link.create(link_params)
     if current_user
       @user_info = current_user.id
