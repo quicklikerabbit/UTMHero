@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require zeroclipboard
 //= require turbolinks
 //= require jquery.turbolinks
 //= require_tree .
