@@ -41,11 +41,13 @@ class LinksController < ApplicationController
   end
 
   def create
+    byebug
     @link = Link.create(link_params)
     if current_user
       @user_info = current_user.id
       @link.user_id = @user_info
       @link.save
+      @user_info = @user_info.to_s
     else
       @user_info = session.id
       session[:user_info] = session.id

@@ -17,7 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    byebug
     redirect_to root_path, notice: "You've successfully signed out."
   end
 end

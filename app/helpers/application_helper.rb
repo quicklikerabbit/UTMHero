@@ -17,7 +17,6 @@ module ApplicationHelper
   end
 
   def assign_links_to_user(user)
-    byebug
     if session[:user_info]
       clients = Client.where("created_by = ?", session[:user_info])
       clients.each do |client|
