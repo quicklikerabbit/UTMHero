@@ -11,7 +11,7 @@ class LinksController < ApplicationController
       @link = Link.new
       @clients = Client.all
       @users = User.all
-      @last_link = Link.last
+      @last_link = @links.last
 
       if @clients.count > 0
         @client_name = @clients.find(@last_link.client_id).name
@@ -28,8 +28,6 @@ class LinksController < ApplicationController
         end
       end
     end
-
-
   end
 
   def show
@@ -44,13 +42,24 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.create(link_params)
-    if current_user == nil
+    if current_user
+      @user_info = current_user.id
+      @link.user_id = @user_info
+      @link.save
+    else
       session[:start_time] ||= Time.now
+      @user_info = session.id
+      @link.created_by = @user_info
+      @link.save
     end
 
-    if Client.find_by(name: link_params[:client_id]) == nil
-      @client = Client.new(name: link_params[:client_id])
-      @client.save
+    @clients = Client.where("name LIKE ? AND created_by = ?", link_params[:client_id], @user_info)
+
+    if @clients == []
+      @client = Client.create(
+        name: link_params[:client_id],
+        created_by: @user_info
+        )
       @link.client_id = @client.id
       @link.save
       if current_user
@@ -58,13 +67,16 @@ class LinksController < ApplicationController
           client_id: @client.id,
           user_id: current_user.id
           )
+        @client.created_by = current_user.id
+        @client.save
         @link.user_id = current_user.id
         @link.save
       else
-
+        @client.created_by = @user_info
+        @client.save
       end
     else
-      @link.client_id = Client.find_by(name: link_params[:client_id]).id
+      @link.client_id = @clients.find_by(name: link_params[:client_id]).id
       @link.save
     end
 
