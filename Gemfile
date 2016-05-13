@@ -39,6 +39,8 @@ gem 'puma'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 
+gem 'zeroclipboard-rails'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
