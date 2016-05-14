@@ -14,6 +14,8 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
+  var clip = new ZeroClipboard($("#copy-button"), {
+  });
   var close = $("#close-button");
   close.on('click', function(){
     createLinkOverlay.fadeTo(500, 0.0, function(){
