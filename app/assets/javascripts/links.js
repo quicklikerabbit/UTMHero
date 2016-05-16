@@ -20,6 +20,8 @@ $(function() {
       createLinkOverlay.addClass('hidden');
     });
   });
+  var clip = new Clipboard("#copy-button");
+  console.log(clip);
 });
 $(function() {
   $( '#links_table').DataTable( {
