@@ -12,7 +12,7 @@ class LinksController < ApplicationController
       @link = Link.new
       @clients = Client.all
       @users = User.all
-      @last_link = @links.last
+      @last_link = @links.first
 
       if @clients.count > 0
         @client_name = @clients.find(@last_link.client_id).name
