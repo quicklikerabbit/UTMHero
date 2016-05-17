@@ -5,7 +5,7 @@ $(function() {
     }
   };
 
-  $('#lndpg-submit-button').on('click', function(){
+  $('#links').on('bitly', function(){
     var links = document.getElementById('links');
     var linksUrl = links.innerText || links.textContent;
     if (!/^https?:\/\//i.test(linksUrl)){
