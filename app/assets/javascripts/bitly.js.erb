@@ -1,0 +1,22 @@
+$(function() {
+  var callbacks = {
+    bitlyAjaxSuccess: function(parsed_json) {
+      console.log(parsed_json.data.url);
+    }
+  };
+
+  $('#links').on('bitly', function(){
+    var links = document.getElementById('links');
+    var linksUrl = links.innerText || links.textContent;
+    if (!/^https?:\/\//i.test(linksUrl)){
+      var longUrl = "http://" + encodeURIComponent(linksUrl);
+    }else{
+      var longUrl = encodeURIComponent(linksUrl);
+    }
+    var apiKey = '<%= Rails.application.secrets.bitly_api_key %>';
+    $.ajax({
+      url : "https://api-ssl.bitly.com/v3/shorten?access_token=" + apiKey + "&longUrl=" + longUrl,
+      success : callbacks.bitlyAjaxSuccess
+    });
+  });
+});
