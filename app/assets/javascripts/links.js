@@ -21,8 +21,9 @@ $(function() {
     });
   });
   var clip = new Clipboard("#copy-button");
-  console.log(clip);
+  
 });
+
 $(function() {
   $( '#links_table').DataTable( {
       "scrollX": true,
