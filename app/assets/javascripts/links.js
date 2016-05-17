@@ -21,7 +21,6 @@ $(function() {
     });
   });
   var clip = new Clipboard("#copy-button");
-  
 });
 
 $(function() {
