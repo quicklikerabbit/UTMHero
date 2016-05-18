@@ -72,6 +72,31 @@ label {
     margin-bottom: 1em;
 }
 
+#user_email {
+  border: 1px solid #ddd;
+  border-width: 0 0 1px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 100%;
+  width: 100%;
+  margin-bottom: 0em;
+  border-radius: 0em;
+  background: transparent;
+}
+
+#email {
+  border: 1px solid #ddd;
+  border-width: 0 0 1px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 100%;
+  width: 100%;
+  margin-bottom: 0em;
+  border-radius: 0em;
+  background: transparent;
+}
+
+
 /*
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different

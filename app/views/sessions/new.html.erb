@@ -4,7 +4,7 @@
     <%= form_tag sessions_path do %>
       <div class="pure-form pure-form-stacked">
         <%= label_tag :email %><br/>
-        <%= text_field_tag :email, nil, :required => true %>
+        <%= text_field_tag :email, nil, :required => true, type: 'email' %>
       </div>
       <div class="pure-form pure-form-stacked">
         <%= label_tag :password %><br/>
