@@ -12,6 +12,8 @@ class Link < ActiveRecord::Base
   after_create :make_utm_link
 
   require 'uri'
+  require 'net/http'
+  require 'json'
 
   private
 
@@ -38,6 +40,24 @@ class Link < ActiveRecord::Base
     utm_campaign = "&utm_campaign=#{self.campaign_name}"
     self.utm_link = "#{website_url}#{utm_source}#{utm_medium}#{utm_term}#{utm_content}#{utm_campaign}"
     self.utm_link = URI.escape(self.utm_link)
+    self.save
+    shorten_with_bitly(self.utm_link)
+  end
+
+  def shorten_with_bitly(url)
+    unless url[/\Ahttp:\/\//] || url[/\Ahttps:\/\//]
+      url = "http://#{url}"
+    end
+    url = URI.escape(url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+    api_key = Rails.application.secrets.bitly_api_key
+    bitly_url = "https://api-ssl.bitly.com/v3/shorten?access_token=" + api_key + "&longUrl=" + url
+
+    # parse result and return shortened url
+    uri = URI.parse(bitly_url)
+    result = Net::HTTP.get(uri)
+    json = JSON.parse(result)
+    short_url = json["data"]["url"]
+    self.short_link = short_url
     self.save
   end
 
