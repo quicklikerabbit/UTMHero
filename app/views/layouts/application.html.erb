@@ -24,10 +24,10 @@
           </ul>
         </div>
     </div>
-    <% if flash %>
+    <% unless flash.empty? %>
       <div class="flash">
         <% flash.each do |key, value| %>
-          <%= content_tag(:div, value) %>
+          <%= content_tag(:div, value, class: "notifications") %>
         <% end %>
       </div>
       <% end %>

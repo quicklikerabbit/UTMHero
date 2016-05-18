@@ -14,7 +14,6 @@ class LinksController < ApplicationController
       @users = User.all
       @last_link = @links.first
 
-      byebug
       if @clients.count > 0
         @client_name = @clients.find(@last_link.client_id).name
       end

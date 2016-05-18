@@ -1,11 +1,18 @@
 .flash{
  position: fixed;
+ min-width: 300px;
  max-width:600px;
- top:20px;
+ top:15px;
  right:20px;
  height:40px;
  z-index: 4;
- background: #2d3e50;
+ border-radius: 2px;
+ background: #fff;
+ padding: 0.5em;
+}
+
+.notifications{
+  text-align: center;
 }
 
 @media (min-width: 48em) {
