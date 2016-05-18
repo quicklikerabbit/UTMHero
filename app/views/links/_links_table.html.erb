@@ -4,6 +4,7 @@
           <th>Client</th>
           <th>Made By</th>
           <th>Created At</th>
+          <th>Bitly URL</th>
           <th>Website URL</th>
           <th>Campaign Source</th>
           <th>Campaign Medium</th>
@@ -27,6 +28,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </tfoot>
   <tbody>
@@ -36,6 +38,7 @@
             <td><%= @client_names[i] %></td>
             <td><%= @user_names[i] %></td>
             <td><%= @created_times[i] %></td>
+            <td><%= @links[i].short_link %></td>
             <td><%= @links[i].website_url %></td>
             <td><%= @links[i].campaign_source %></td>
             <td><%= @links[i].campaign_medium %></td>
