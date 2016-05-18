@@ -10,10 +10,11 @@ class LinksController < ApplicationController
       @links = Link.where(client_id: @client_links).order(created_at: :desc)
 
       @link = Link.new
-      @clients = Client.all
+      @clients = Client.where(id: @client_links)
       @users = User.all
       @last_link = @links.first
 
+      byebug
       if @clients.count > 0
         @client_name = @clients.find(@last_link.client_id).name
       end
