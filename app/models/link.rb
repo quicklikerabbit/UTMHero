@@ -49,7 +49,7 @@ class Link < ActiveRecord::Base
       url = "http://#{url}"
     end
     url = URI.escape(url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
-    api_key = Rails.application.secrets.bitly_api_key
+    api_key = ENV["BITLY_API_KEY"]
     bitly_url = "https://api-ssl.bitly.com/v3/shorten?access_token=" + api_key + "&longUrl=" + url
 
     # parse result and return shortened url
