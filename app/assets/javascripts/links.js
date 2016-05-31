@@ -24,27 +24,26 @@ $(function() {
 });
 
 $(function() {
-  $( '#links_table').DataTable( {
-      "scrollX": true,
-      "order": [[ 2, "desc" ]],
-      "sDom": '<"top"fli>rt<"bottom"p><"clear">',
-      initComplete: function () {
-        this.api().columns(0).every( function () {
-          var column = this;
-          var select = $('<select><option value=""></option></select>')
-            .appendTo( $(column.footer()).empty() )
-              .on( 'change', function () {
-                var val = $.fn.dataTable.util.escapeRegex(
-                  $(this).val()
-                );
-                column
-                  .search( val ? '^'+val+'$' : '', true, false )
-                  .draw();
-              });
-              column.data().unique().sort().each(function(d, j) {
-                select.append( '<option value="'+d+'">'+d+'</option>');
-              });
-        });
-      }
-  });
+  // Setup - add a text input to each footer cell
+  $('#links_table thead tr#filterrow th').each( function () {
+      var title = $('#links_table thead th').eq( $(this).index() ).text();
+      $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+  } );
+
+  $("#links_table thead input").on( 'keyup change', function () {
+      table
+          .column( $(this).parent().index()+':visible' )
+          .search( this.value )
+          .draw();
+  } );
+
+  // DataTable
+  var table = $('#links_table').DataTable( {
+        "scrollX": true,
+        "orderCellsTop": true,
+        "order": [[ 2, "desc" ]],
+        "sDom": '<"top"fli>rt<"bottom"p><"clear">'
+    });
+
+  // Apply the filter
 });
