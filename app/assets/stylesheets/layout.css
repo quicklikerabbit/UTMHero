@@ -28,3 +28,7 @@
   right: 20px;
   position: fixed;
 }
+
+.l-box-lrg.pure-u-1.pure-u-md-3-5, .pure-u-1.pure-u-md-2-5 {
+  padding: 1em;
+}
