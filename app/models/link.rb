@@ -33,7 +33,6 @@ class Link < ActiveRecord::Base
     end
     if self.utm_content == ""
       utm_content = ""
-    elsif self.utm_content
     else
       utm_content = "&utm_content=#{self.utm_content}"
     end
