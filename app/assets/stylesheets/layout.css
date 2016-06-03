@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.sidebar{
+  overflow-x: scroll;
+}
+
 @media (min-width: 48em) {
   .sidebar{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);

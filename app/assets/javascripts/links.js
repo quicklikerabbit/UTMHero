@@ -39,25 +39,25 @@ $(function() {
   } );
   // DataTable
   var table = $('#links_table').removeAttr('width').DataTable( {
-        "scrollX": true,
-        "columns":[
-          { "visible": false },
-          null,
-          { "visible": false },
-          null,
-          { "visible": false },
-          { "visible": false },
-          { "visible": false },
-          { "visible": false },
-          { "visible": false },
-          { "visible": false },
-          null,
-          { "visible": false }
+        orderCellsTop: true,
+        order: [[ 2, "desc" ]],
+        sDom: '<"top"fli>rt<"bottom"p><"clear">',
+        autoWidth: false,
+        columns: [
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" },
+          { width: "150px" }
         ],
-        "orderCellsTop": true,
-        "order": [[ 2, "desc" ]],
-        "sDom": '<"top"fli>rt<"bottom"p><"clear">',
-        "autoWidth": true
+        fixedColumns : true
     });
   $('.showHideColumn').on( 'click', function () {
     var tableColumn = table.column($(this).attr('data-columnindex'));
