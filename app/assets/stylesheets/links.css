@@ -112,7 +112,7 @@
   border: 3px solid white;
   outline: none;
 }
-.showHideColumn.button-xsmall.pure-button{
+.button-xsmall.pure-button{
   font-size: 70%;
   font-family: inherit;
   padding: .5em 1em;
@@ -126,9 +126,9 @@
   margin: 0.25em;
 }
 
-.showHideColumn.button-xsmall.pure-button-hover,
-.showHideColumn.button-xsmall.pure-button:hover,
-.showHideColumn.button-xsmall.pure-button:focus
+.button-xsmall.pure-button-hover,
+.button-xsmall.pure-button:hover,
+.button-xsmall.pure-button:focus
 {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000', GradientType=0);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0, 0, 0, .05)), to(rgba(0, 0, 0, .1)));
