@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'user_adder/new'
-
-  get 'user_adder/create'
-
-  get 'user_adder/destroy'
-
+  resources :user_adder, only: [:new, :create, :destroy]
+  
   get 'client_users/new'
 
   get 'client_users/create'

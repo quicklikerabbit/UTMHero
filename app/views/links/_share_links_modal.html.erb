@@ -9,7 +9,7 @@
     </div>
     <div class="modal-body">
       <h3>Who do you want to share them with?</h3>
-      <%= form_for @add_user, url: {action: "create"}, html: {class: "pure-form", style: "width: 50%; margin-left: 25%"} do |f| %>
+      <%= form_for @add_user, url: {controller: 'user_adder', action: "create"}, html: {class: "pure-form", style: "width: 50%; margin-left: 25%"} do |f| %>
         <%= f.label :client %><br>
         <%= f.text_field :client %>
         <%= f.label :user_email %><br>

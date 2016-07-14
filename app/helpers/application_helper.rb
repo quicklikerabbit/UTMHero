@@ -35,4 +35,10 @@ module ApplicationHelper
     end
   end
 
+  def add_client_user(client, user_email)
+    @client_id = Client.find_by(name: client).id
+
+    @user_id = User.find_by(email: user_email).id
+    @client_user = ClientUser.create(client_id: @client_id, user_id: @user_id)
+  end
 end
