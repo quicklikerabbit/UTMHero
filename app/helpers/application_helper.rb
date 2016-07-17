@@ -36,9 +36,26 @@ module ApplicationHelper
   end
 
   def add_client_user(client, user_email)
-    @client_id = Client.find_by(name: client).id
+    @client_id = Client.where(name: client)
+    if @client_id == []
+      flash[:error] = "Could not find Client"
+      redirect_to links_path
+    end
+    if @client_id.count > 1
+      # refine client list to include only those where current user is listed
+      # as a client_user for that client
+      # "name LIKE ? AND created_by = ?", link_params[:client_id], @user_info
+    else
+      @client_id = @client_id[0].id
+    end
+
 
     @user_id = User.find_by(email: user_email).id
+    if @user_id == nil
+      flash[:error] = "Could not find user, have they signed up yet?"
+      redirect_to links_path
+    end
+
     @client_user = ClientUser.create(client_id: @client_id, user_id: @user_id)
   end
 end
