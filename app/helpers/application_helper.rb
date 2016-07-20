@@ -48,8 +48,9 @@ module ApplicationHelper
       i = 0
       while i <= @client_users.count
           @client_id = @client_users.find_by("user_id = ? AND client_id = ?", current_user.id, @client[i].id)
-          if @client_id.is_a? Numeric
+          if @client_id.is_a? ClientUser
             @client_id = @client_id.client_id
+            i = @client_users.count
           end
           i += 1
       end
