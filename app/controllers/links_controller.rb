@@ -5,6 +5,7 @@ class LinksController < ApplicationController
 
   def index
     require_logged_in_user
+    @add_user = UserAdder.new
     if current_user
       @client_links = ClientUser.where(user_id: current_user.id).pluck(:client_id)
       @links = Link.where(client_id: @client_links).order(created_at: :desc)

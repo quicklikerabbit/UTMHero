@@ -1,10 +1,24 @@
-#links_table_filter{
-  float: left;
-  padding-right: 0.5em;
-}
-#links_table_wrapper{
-  max-width: 100%;
-}
 .dataTables_scrollHead{
   text-align: left;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+  white-space: nowrap;
+}
+table{
+  margin: 0 auto;
+  width: 100%;
+  clear: both;
+  border-collapse: collapse;
+  table-layout: fixed;
+  word-wrap:break-word;
+}
+#filterrow input[type=text]{
+  border-radius: 5px;
+  width: 150px;
+}
+
+table.dataTable.compact tbody td {
+  overflow: scroll;
 }

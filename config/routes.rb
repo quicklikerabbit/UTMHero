@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :user_adder, only: [:new, :create, :destroy]
+  
   get 'client_users/new'
 
   get 'client_users/create'
