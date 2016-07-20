@@ -36,7 +36,7 @@ module ApplicationHelper
   end
 
   def add_client_user(client, user_email)
-    byebug
+    
     @client = Client.where(name: client)
     if @client == []
       flash[:error] = "Could not find Client"
