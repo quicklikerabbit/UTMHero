@@ -28,6 +28,8 @@ class UserAdderController < ApplicationController
       if client_user == nil
         flash[:error] = "Could not find Client in your links"
         redirect_to links_path
+      else
+        flash[:notice] = "Links successfully shared!"
       end
     end
   end
