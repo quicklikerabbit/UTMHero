@@ -35,9 +35,9 @@ module ApplicationHelper
     end
   end
 
-  def add_client_user(add_user_client, add_user_email, client)
+  def add_client_user(client, user_id)
 
-    if add_user_client.count > 1
+    if client.count > 1
       @client_users = ClientUser.where(user_id: current_user.id)
       i = 0
       while i <= @client_users.count
@@ -48,13 +48,18 @@ module ApplicationHelper
           end
           i += 1
       end
-
+      if @client_id == []
+        @client_id = nil
+      end
     else
       @client_id = client[0].id
     end
 
+    @user_id = user_id
+
     if @client_id && @user_id
       @client_user = ClientUser.create(client_id: @client_id, user_id: @user_id)
     end
+    return @client_id
   end
 end

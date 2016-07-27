@@ -11,18 +11,24 @@ class UserAdderController < ApplicationController
 
     @add_user = UserAdder.create(user_adder_params)
 
-    @user_id = User.find_by(email: add_user_email).id
+    @user_id = User.find_by(email: @add_user.user_email)
     if @user_id == nil
       flash[:error] = "Could not find user, have they signed up yet?"
       redirect_to links_path
+    else
+      @user_id = @user_id.id
     end
 
-    @client = Client.where(name: client)
+    @client = Client.where(name: @add_user.client)
     if @client == []
       flash[:error] = "Could not find Client"
       redirect_to links_path
     else
-      add_client_user(@add_user.client, @add_user.user_email, @client)
+      client_user = add_client_user(@client, @user_id)
+      if client_user == nil
+        flash[:error] = "Could not find Client in your links"
+        redirect_to links_path
+      end
     end
   end
 
