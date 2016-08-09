@@ -1,0 +1,14 @@
+<% (0..@links.length).each do |i| %>
+  <%= @client_names[i] %>
+  <%= @user_names[i] %>
+  <%= @created_times[i] %>
+  <%= @links[i].short_link %>
+  <%= @links[i].website_url %>
+  <%= @links[i].campaign_source %>
+  <%= @links[i].campaign_medium %>
+  <%= @links[i].communication_id %>
+  <%= @links[i].utm_content %>
+  <%= @links[i].campaign_name %>
+  <%= @links[i].link_reference %>
+  <%= @links[i].utm_link %>
+<% end %>
