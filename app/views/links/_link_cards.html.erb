@@ -7,15 +7,19 @@
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4"><%= @client_names[i] %><i class="material-icons right">more_vert</i></span>
         <p><a href="#"><%= @links[i].short_link %></a></p>
+        <p><%= @links[i].website_url %></p>
+        <p><%= @links[i].campaign_name %></p>
       </div>
       <div class="card-action">
         <p><a href="#">Edit</a></p>
         <p><a href="#">Delete</a></p>
+        <p class="align-right"><p><%= @links[i].link_reference %></p>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"><li><%= @links[i].campaign_name %></li><i class="material-icons right">close</i></span>
-        <p><%= @links[i].link_reference %></p>
+        <span class="card-title grey-text text-darken-4"><p><%= @client_names[i] %></p><i class="material-icons right">close</i></span>
         <ul>
+          <li><strong>Campaign Name:</strong> <%= @links[i].campaign_name %></li>
+          <li><strong>Bitly:</strong> <%= @links[i].short_link %></li>
           <li><strong>Created:</strong> <%= @created_times[i] %></li>
           <li><strong>By:</strong> <%= @user_names[i] %></li>
           <li><strong>URL:</strong> <%= @links[i].website_url %></li>
@@ -23,7 +27,8 @@
           <li><strong>Medium:</strong> <%= @links[i].campaign_medium %></li>
           <li><strong>Term:</strong> <%= @links[i].communication_id %></li>
           <li><strong>UTM Content:</strong> <%= @links[i].utm_content %></li>
-          <li><strong>Full Link:</strong> <%= @links[i].utm_link %></li>
+          <li style="white-space: nowrap;"><strong>Full Link:</strong> <%= @links[i].utm_link %></li>
+          <li><strong>Notes:</strong><%= @links[i].link_reference %></li>
         </ul>
       </div>
     </div>
