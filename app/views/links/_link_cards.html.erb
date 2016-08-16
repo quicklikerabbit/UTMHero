@@ -1,14 +1,31 @@
 <% (0..@links.length).each do |i| %>
-  <%= @client_names[i] %>
-  <%= @user_names[i] %>
-  <%= @created_times[i] %>
-  <%= @links[i].short_link %>
-  <%= @links[i].website_url %>
-  <%= @links[i].campaign_source %>
-  <%= @links[i].campaign_medium %>
-  <%= @links[i].communication_id %>
-  <%= @links[i].utm_content %>
-  <%= @links[i].campaign_name %>
-  <%= @links[i].link_reference %>
-  <%= @links[i].utm_link %>
+  <% if @links[i] %>
+    <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="assets/hero-slide02.jpg">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= @client_names[i] %><i class="material-icons right">more_vert</i></span>
+        <p><a href="#"><%= @links[i].short_link %></a></p>
+      </div>
+      <div class="card-action">
+        <p><a href="#">Edit</a></p>
+        <p><a href="#">Delete</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><li><%= @links[i].campaign_name %></li><i class="material-icons right">close</i></span>
+        <p><%= @links[i].link_reference %></p>
+        <ul>
+          <li><strong>Created:</strong> <%= @created_times[i] %></li>
+          <li><strong>By:</strong> <%= @user_names[i] %></li>
+          <li><strong>URL:</strong> <%= @links[i].website_url %></li>
+          <li><strong>Source:</strong> <%= @links[i].campaign_source %></li>
+          <li><strong>Medium:</strong> <%= @links[i].campaign_medium %></li>
+          <li><strong>Term:</strong> <%= @links[i].communication_id %></li>
+          <li><strong>UTM Content:</strong> <%= @links[i].utm_content %></li>
+          <li><strong>Full Link:</strong> <%= @links[i].utm_link %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
 <% end %>
