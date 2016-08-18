@@ -32,14 +32,6 @@
     outline: none;
 }
 
-#share-links-button {
-    background-color: #76BADF;
-    color: white;
-    padding: 0 0.5em;
-    border-radius: 5px;
-    border: 2px solid #ddd;
-}
-
 .white {
   color: white;
 }

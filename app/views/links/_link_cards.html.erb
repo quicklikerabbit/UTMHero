@@ -1,9 +1,9 @@
 <% (0..@links.length).each do |i| %>
   <% if @links[i] %>
     <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
+      <!-- <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="assets/hero-slide02.jpg">
-      </div>
+      </div> -->
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4"><%= @client_names[i] %><i class="material-icons right">more_vert</i></span>
         <p><a href="#"><%= @links[i].short_link %></a></p>
@@ -27,7 +27,7 @@
           <li><strong>Medium:</strong> <%= @links[i].campaign_medium %></li>
           <li><strong>Term:</strong> <%= @links[i].communication_id %></li>
           <li><strong>UTM Content:</strong> <%= @links[i].utm_content %></li>
-          <li style="white-space: nowrap;"><strong>Full Link:</strong> <%= @links[i].utm_link %></li>
+          <li style="white-space: nowrap;overflow: scroll;"><strong>Full Link:</strong> <%= @links[i].utm_link %></li>
           <li><strong>Notes:</strong><%= @links[i].link_reference %></li>
         </ul>
       </div>

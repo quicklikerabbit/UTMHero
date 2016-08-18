@@ -1,6 +1,6 @@
 <% if @last_link %>
   <%= form_for @link do |f| %>
-    <div class="pure-form">
+    <div class="row">
       <%= f.label :client_id %><br>
       <%= f.text_field :client_id, value: @client_name %>
       <%= f.label :website_url, "Website URL *" %>
@@ -18,12 +18,12 @@
       <%= f.label :link_reference, "Notes" %>
       <%= f.text_field :link_reference, value: @last_link.link_reference %>
       <br />
-      <%= f.submit "Submit", id: "index-page-submit-button" %>
+      <%= f.submit "Submit", class: "waves-effect waves-light btn blue" %>
     </div>
   <% end %>
 <% else %>
   <%= form_for @link do |f| %>
-    <div class="pure-form">
+    <div class="row">
       <%= f.label :client_id %><br>
       <%= f.text_field :client_id, value: @client_name %>
       <%= f.label :website_url, "Website URL *" %>
@@ -41,7 +41,7 @@
       <%= f.label :link_reference, "Notes" %>
       <%= f.text_field :link_reference %>
       <br />
-      <%= f.submit "Submit", id: "index-page-submit-button" %>
+      <%= f.submit "Submit", class: "waves-effect waves-light btn blue" %>
     </div>
   <% end %>
 <% end %>
