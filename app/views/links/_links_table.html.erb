@@ -1,20 +1,4 @@
-<div>
-  <b>Show / Hide Columns:</b>
-  <br />
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="0">Client</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="1">Made By</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="2">Created At</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="3">Bitly URL</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="4">Website URL</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="5">Campaign Source</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="6">Campaign Medium</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="7">Campaign Term</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="8">Campaign Content</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="9">Campaign Name</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="10">Notes</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="11">UTM Link</button>
-</div>
-<table id="links_table" class="compact">
+<table id="links_table" class="striped bordered">
   <thead>
       <tr>
           <th>Client</th>
@@ -30,38 +14,26 @@
           <th>Notes</th>
           <th>UTM Link</th>
       </tr>
-    <tr id="filterrow">
-        <th>Client</th>
-        <th>Made By</th>
-        <th>Created At</th>
-        <th>Bitly URL</th>
-        <th>Website URL</th>
-        <th>Campaign Source</th>
-        <th>Campaign Medium</th>
-        <th>Campaign Term</th>
-        <th>Campaign Content</th>
-        <th>Campaign Name</th>
-        <th>Notes</th>
-        <th>UTM Link</th>
-    </tr>
   </thead>
   <tbody>
     <% (0..@links.length).each do |i| %>
       <% if @links[i] %>
-        <tr>
-            <td><%= @client_names[i] %></td>
-            <td><%= @user_names[i] %></td>
-            <td><%= @created_times[i] %></td>
-            <td><%= @links[i].short_link %></td>
-            <td><%= @links[i].website_url %></td>
-            <td><%= @links[i].campaign_source %></td>
-            <td><%= @links[i].campaign_medium %></td>
-            <td><%= @links[i].communication_id %></td>
-            <td><%= @links[i].utm_content %></td>
-            <td><%= @links[i].campaign_name %></td>
-            <td><%= @links[i].link_reference %></td>
-            <td><%= @links[i].utm_link %></td>
-        </tr>
+        <%= form_for @links[i] do |f| %>
+          <tr>
+              <td><input value="<%= @client_names[i] %>"/></td>
+              <td><input value="<%= @user_names[i] %>"/></td>
+              <td><input value="<%= @created_times[i] %>"</td>
+              <td><input value="<%= @links[i].short_link %>"/></td>
+              <td><input value="<%= @links[i].website_url %>"/></td>
+              <td><%= f.text_field :campaign_source, value: @links[i].campaign_source %></td>
+              <td><%= f.text_field :campaign_medium, value: @links[i].campaign_medium %></td>
+              <td><%= f.text_field :communication_id, value: @links[i].communication_id %></td>
+              <td><%= f.text_field :utm_content, value: @links[i].utm_content %></td>
+              <td><%= f.text_field :campaign_name, value: @links[i].campaign_name %></td>
+              <td><%= f.text_field :link_reference, value: @links[i].link_reference %></td>
+              <td><input value="<%= @links[i].utm_link %>"/></td>
+          </tr>
+        <% end %>
       <% end %>
   <% end %>
   </tbody>

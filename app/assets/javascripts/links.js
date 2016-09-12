@@ -38,60 +38,48 @@ $(function() {
           .draw();
   } );
   // DataTable
-  var table = $('#links_table').removeAttr('width').DataTable( {
-        orderCellsTop: true,
-        order: [[ 2, "desc" ]],
-        sDom: '<"top"fli>rt<"bottom"p><"clear">',
-        autoWidth: false,
-        columns: [
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" },
-          { width: "150px" }
-        ],
-        fixedColumns : true
-    });
-  $('.showHideColumn').on( 'click', function () {
-    var tableColumn = table.column($(this).attr('data-columnindex'));
-    tableColumn.visible(!tableColumn.visible());
-  });
-  $('.showHideColumn').on( 'click', function () {
-    $(this).toggleClass('selected');
-  });
+  var table = $('#links_table');
+  // $('#links_table').removeAttr('width').DataTable( {
+  //       orderCellsTop: true,
+  //       order: [[ 2, "desc" ]],
+  //       sDom: '<"top"fli>rt<"bottom"p><"clear">',
+  //       autoWidth: false,
+  //       columns: [
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" },
+  //         { width: "150px" }
+  //       ],
+  //       fixedColumns : true
+  //   });
+  // $('.showHideColumn').on( 'click', function () {
+  //   var tableColumn = table.column($(this).attr('data-columnindex'));
+  //   tableColumn.visible(!tableColumn.visible());
+  // });
+  // $('.showHideColumn').on( 'click', function () {
+  //   $(this).toggleClass('selected');
+  // });
 });
 
 $(function() {
-    // Get the modal
-  var modal = document.getElementById('myModal');
+  $('.modal-trigger').leanModal({
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: 0.5, // Opacity of modal background
+    in_duration: 300, // Transition in duration
+    out_duration: 200, // Transition out duration
+    starting_top: '4%', // Starting top style attribute
+    ending_top: '10%', // Ending top style attribute
+    ready: function() {}, // Callback for Modal open
+    complete: function() {} // Callback for Modal close
+  }
+);
 
-  // Get the button that opens the modal
-  var btn = document.getElementById("share-links-button");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks the button, open the modal
-  btn.onclick = function() {
-      modal.style.display = "block";
-  };
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-      modal.style.display = "none";
-  };
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      if (event.target == modal) {
-          modal.style.display = "none";
-      }
-  };
 });
