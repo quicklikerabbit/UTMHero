@@ -12,6 +12,11 @@ table{
   overflow: hidden;
 }
 
-table td{
+#links_table, td{
   padding: 0em 0.5em;
+  border-bottom: none;
+}
+
+#links_table, td::selection{
+  border-bottom: 1px solid #9e9e9e;;
 }

@@ -1,9 +1,4 @@
 $(function() {
-  $("#get-started-button").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#link-form").offset().top
-    }, 1000);
-  });
   $( document ).ajaxComplete(function() {
     $('#create-link-overlay').removeClass('hidden').fadeTo(500, 0.9);
   });

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :user_adder, only: [:new, :create, :destroy]
-  
+
   get 'client_users/new'
 
   get 'client_users/create'
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :links, only: [:index, :show, :new, :create, :edit, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  get '/sessions/current', to: 'sessions#destroy'
 
   root to: 'links#new'
 
