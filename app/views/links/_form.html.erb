@@ -2,7 +2,7 @@
   <form class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
+        <%= form_for @link, url: {controller: 'links', action: "create"}, remote: true do |f| %>
         <%= f.label :client_id %><br>
         <%= f.text_field :client_id %>
         </div>
@@ -105,7 +105,7 @@
       </div>
       <div class="row">
         <div class="col s6">
-          <%= f.submit "Submit", id: "lndpg-submit-button" %>
+          <%= f.submit "Submit", id: "lndpg-submit-button", class: "waves-effect waves-light blue btn" %>
         </div>
       </div>
       <% end %>
