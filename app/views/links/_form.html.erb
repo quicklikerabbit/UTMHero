@@ -1,8 +1,8 @@
 <div class="content">
-  <form class="col s12">
+  <div class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <%= form_for @link, url: {controller: 'links', action: "create"}, remote: true do |f| %>
+        <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
         <%= f.label :client_id %><br>
         <%= f.text_field :client_id %>
         </div>
@@ -109,5 +109,5 @@
         </div>
       </div>
       <% end %>
-    </form>
+    </div>
 </div>
