@@ -14,3 +14,6 @@
  *= require_self
  *= require material_icons
  */
+ html {
+   font-family: GillSans, Calibri, Trebuchet, sans-serif;
+ }

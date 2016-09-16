@@ -36,9 +36,6 @@ gem 'byebug', '2.4.1'
 
 gem 'puma'
 
-gem 'jquery-datatables-rails'
-gem 'ajax-datatables-rails'
-
 gem 'material_icons'
 
 gem 'clipboard-rails'

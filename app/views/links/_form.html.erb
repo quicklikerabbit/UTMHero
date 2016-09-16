@@ -1,111 +1,119 @@
 <div class="content">
-  <div class="col s12">
-    <div class="row">
-      <div class="input-field col s6">
-        <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
-        <%= f.label :client_id %><br>
-        <%= f.text_field :client_id %>
-        </div>
-        <div class="col s6">
-            <p>
-              Used to group URLs together by a common company. Use this field if you are
-              creating this link on behalf of another organization.
-              <br /><i>Example:</i> Helmkin Digital
-            </p>
+  <div class="pure-g home-form">
+    <div class="pure-u-1 pure-u-md-2-5">
+      <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :client_id %><br>
+          <%= f.text_field :client_id %>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= f.label :website_url, "Website URL *" %><br>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+          <br />
+          <p>
+            Used to group URLs together by a common company. Use this field if you are
+            creating this link on behalf of another organization.
+            <br /><i>Example:</i> Helmkin Digital
+          </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :website_url, "Website URL*" %><br>
           <%= f.text_field :website_url, required: true %>
         </div>
-        <div class="col s6">
-          <p>
-            Required. This is the intended destination when you click on the link.
-            <br /><i>Example:</i> <code>app.helmkin.com</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= f.label :campaign_source, "Campaign Source *"%><br>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. This is the intended destination when you click on the link.
+          <br /><i>Example:</i> <code>app.helmkin.com</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_source, "Campaign Source*"%><br>
           <%= f.text_field :campaign_source, required: true %>
         </div>
-        <div class="col s6">
-          <p>
-            Required. Use utm_source to identify a search engine, newsletter name,
-            or other source.
-            <br /><i>Example:</i> <code>google</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= f.label :campaign_medium, "Campaign Medium *" %><br>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Use utm_source to identify a search engine, newsletter name,
+          or other source.
+          <br /><i>Example:</i> <code>google</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_medium, "Campaign Medium*" %><br>
           <%= f.text_field :campaign_medium, required: true %>
         </div>
-        <div class="col s6">
-          <p>
-            Required. Use utm_medium to identify a medium such as email or
-            cost-per- click.
-            <br /><i>Example:</i> <code>cpc</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Use utm_medium to identify a medium such as email or
+          cost-per- click.
+          <br /><i>Example:</i> <code>cpc</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
           <%= f.label :communication_id, "Campaign Term" %><br>
           <%= f.text_field :communication_id %>
         </div>
-        <div class="col s6">
-          <p>
-            Optional. Used for paid search. Use utm_term to note the keywords for this ad.
-            <br /><i>Example:</i><code>running+shoes</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Optional. Used for paid search. Use utm_term to note the keywords for this ad.
+          <br /><i>Example:</i><code>running+shoes</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
           <%= f.label :utm_content, "Campaign Content" %><br>
           <%= f.text_field :utm_content %>
         </div>
-        <div class="col s6">
-          <p>
-            Optional. Used for A/B testing and content-targeted ads. Use utm_content to
-            differentiate ads or links that point to the same URL.
-            <br /><i>Examples: </i><code>logolink</code> or <code>textlink</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
-          <%= f.label :campaign_name, "Campaign Name *" %><br>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Optional. Used for A/B testing and content-targeted ads. Use utm_content to
+          differentiate ads or links that point to the same URL.
+          <br /><i>Examples: </i><code>logolink</code> or <code>textlink</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.label :campaign_name, "Campaign Name*" %><br>
           <%= f.text_field :campaign_name, required: true %>
         </div>
-        <div class="col s6">
-          <p>
-            Required. Used for keyword analysis. Use utm_campaign to identify a
-            specific product promotion or strategic campaign.
-            <br /><i>Example: </i><code>spring_sale</code>
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="input-field col s6">
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          Required. Used for keyword analysis. Use utm_campaign to identify a
+          specific product promotion or strategic campaign.
+          <br /><i>Example: </i><code>spring_sale</code>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
           <%= f.label :link_reference, "Notes" %><br>
           <%= f.text_field :link_reference %>
         </div>
-        <div class="col s6">
-          <p>
-            This optional field allows you to add any additional information you need
-            to help keep track of who made this link or why it was made.
-            <br /><i>Example: </i>Gill; made to test orange banner
-          </p>
-        </div>
       </div>
-      <div class="row">
-        <div class="col s6">
-          <%= f.submit "Submit", id: "lndpg-submit-button", class: "waves-effect waves-light blue btn" %>
+      <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+        <br />
+        <p>
+          This optional field allows you to add any additional information you need
+          to help keep track of who made this link or why it was made.
+          <br /><i>Example: </i>Gill; made to test orange banner
+        </p>
+      </div>
+      <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+        <div class="pure-form pure-form-stacked">
+          <%= f.submit "Submit", id: "lndpg-submit-button" %>
         </div>
       </div>
       <% end %>
