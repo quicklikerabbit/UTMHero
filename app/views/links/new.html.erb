@@ -1,16 +1,16 @@
-<div class="container">
-  <div id="create-link-overlay" class="hidden">
-    <div class="create-link">
-      <img id="close-button" src="<%= asset_path('Media_Viewer_Icon_-_Close.svg.png') %>">
-      <h1 class="create-link-head">Here ya go!</h1>
-        <div id="links">
+<div id="create-link-overlay" class="hidden">
+  <div class="create-link">
+    <img id="close-button" src="<%= asset_path('Media_Viewer_Icon_-_Close.svg.png') %>">
+    <h1 class="create-link-head">Here ya go!</h1>
+      <div id="links">
 
-        </div>
-        <button id="copy-button" data-clipboard-action='copy' data-clipboard-target='#links'><b>Copy To Clipboard</b></button>
-        <br />
-        <button id="make-another">Make Another Link</button>
-    </div>
+      </div>
+      <button id="copy-button" data-clipboard-action='copy' data-clipboard-target='#links'><b>Copy To Clipboard</b></button>
+      <br />
+      <button id="make-another">Make Another Link</button>
   </div>
+</div>
+<div class="container">
   <div id="link-form">
     <%= render 'form' %>
   </div>
