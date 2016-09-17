@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="pure-g home-form">
-    <div class="pure-u-1 pure-u-md-2-5">
+  <div class="col s12">
+    <div class="row">
       <%= form_for @link, html: { multipart: true }, remote: true do |f| %>
         <div class="pure-form pure-form-stacked">
           <%= f.label :client_id %><br>
@@ -15,7 +15,7 @@
             <br /><i>Example:</i> Helmkin Digital
           </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :website_url, "Website URL*" %><br>
           <%= f.text_field :website_url, required: true %>
@@ -28,7 +28,7 @@
           <br /><i>Example:</i> <code>app.helmkin.com</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_source, "Campaign Source*"%><br>
           <%= f.text_field :campaign_source, required: true %>
@@ -42,7 +42,7 @@
           <br /><i>Example:</i> <code>google</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_medium, "Campaign Medium*" %><br>
           <%= f.text_field :campaign_medium, required: true %>
@@ -56,7 +56,7 @@
           <br /><i>Example:</i> <code>cpc</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :communication_id, "Campaign Term" %><br>
           <%= f.text_field :communication_id %>
@@ -69,7 +69,7 @@
           <br /><i>Example:</i><code>running+shoes</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :utm_content, "Campaign Content" %><br>
           <%= f.text_field :utm_content %>
@@ -83,7 +83,7 @@
           <br /><i>Examples: </i><code>logolink</code> or <code>textlink</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :campaign_name, "Campaign Name*" %><br>
           <%= f.text_field :campaign_name, required: true %>
@@ -97,7 +97,7 @@
           <br /><i>Example: </i><code>spring_sale</code>
         </p>
       </div>
-      <div class="pure-u-1 pure-u-md-2-5">
+      <div class="row">
         <div class="pure-form pure-form-stacked">
           <%= f.label :link_reference, "Notes" %><br>
           <%= f.text_field :link_reference %>
