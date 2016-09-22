@@ -40,6 +40,8 @@ gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 
 gem 'clipboard-rails'
+
+gem 'material_icons'
 # Use unicorn as the app server
 # gem 'unicorn'
 
