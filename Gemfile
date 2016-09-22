@@ -36,9 +36,10 @@ gem 'byebug', '2.4.1'
 
 gem 'puma'
 
-gem 'clipboard-rails'
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
 
-gem 'material_icons'
+gem 'clipboard-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

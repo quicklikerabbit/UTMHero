@@ -11,9 +11,6 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require dataTables/jquery.dataTables
  *= require_self
- *= require material_icons
  */
- html {
-   font-family: GillSans, Calibri, Trebuchet, sans-serif;
- }
