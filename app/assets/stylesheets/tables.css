@@ -17,3 +17,7 @@ table{
 table.dataTable.compact tbody td {
   overflow: scroll;
 }
+
+.container .row input[type=text]{
+  /*height: 0.5rem;*/
+}
