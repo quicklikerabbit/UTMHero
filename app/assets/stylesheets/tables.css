@@ -7,12 +7,7 @@ table.dataTable tbody td {
   white-space: nowrap;
 }
 table{
-  margin: 0 auto;
-  width: 100%;
-  clear: both;
-  border-collapse: collapse;
-  table-layout: fixed;
-  word-wrap:break-word;
+  border-color: grey;
 }
 #filterrow input[type=text]{
   border-radius: 5px;
