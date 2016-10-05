@@ -1,21 +1,16 @@
-<div class="content">
-  <div class="pure-g">
-
-    <div class="l-box-lrg pure-u-1-5">
-      <h2 class="header">Make Another Link</h1>
-      <%= render 'links_index_form' =%>
-
+<div class="row">
+    <div class="col s3 card-panel">
+      <h2>Make Another Link</h2>
+      <div id="links-index-form">
+        <%= render 'links_index_form' =%>
+      </div>
     </div>
-
-    <div class="sidebar l-box-lrg pure-u-4-5">
-
-      <h2 class="header">Your Links</h1>
-      <button id="share-links-button">Share Your Links</button>
-      <%= render 'share_links_modal' =%>
-      <br />
-      <br />
-      <%= render 'links_table' =%>
-    </div>
-
+  <div class="col s9">
+    <h2>Your Links</h2>
+    <button class="btn waves-effect waves-light light-blue darken-4">Share Your Links</button>
+    <%= render 'share_links_modal' =%>
+    <br />
+    <br />
+    <%= render 'links_table' =%>
   </div>
 </div>

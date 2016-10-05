@@ -1,23 +1,22 @@
-.dataTables_scrollHead{
-  text-align: left;
-}
-
-table.dataTable tbody th,
-table.dataTable tbody td {
-  white-space: nowrap;
-}
 table{
-  border-color: grey;
-}
-#filterrow input[type=text]{
-  border-radius: 5px;
-  width: 150px;
+  max-width: 75%;
 }
 
-table.dataTable.compact tbody td {
+#links-table {
+
+}
+
+table td{
   overflow: scroll;
+  max-width: 5em;
+  white-space: nowrap;
+  font-size: small;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
-.container .row input[type=text]{
-  /*height: 0.5rem;*/
+table td:hover {
+  display: block;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
