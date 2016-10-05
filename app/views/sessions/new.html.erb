@@ -1,17 +1,21 @@
-<div class="pure-g">
-  <div class="l-box-lrg pure-u-1 centered">
+<div class="container">
+  <div class="col s12">
     <h1 class="header">Log In</h1>
-    <%= form_tag sessions_path do %>
-      <div class="pure-form pure-form-stacked">
-        <%= label_tag :email %><br/>
-        <%= text_field_tag :email, nil, :required => true, type: 'email' %>
-      </div>
-      <div class="pure-form pure-form-stacked">
-        <%= label_tag :password %><br/>
-        <%= password_field_tag :password, nil, :required => true %>
-      </div>
-      <br />
-      <input class="pure-button pure-button-primary" type="submit" value="Log In">
-    <% end %>
+    <div class="row">
+      <%= form_tag sessions_path do %>
+        <div class="input-field col s6">
+          <%= label_tag :email %><br/>
+          <%= text_field_tag :email, nil, :required => true, type: 'email' %>
+        </div>
+        <div class="input-field col s6">
+          <%= label_tag :password %><br/>
+          <%= password_field_tag :password, nil, :required => true %>
+        </div>
+        <br />
+        <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Login
+          <i class="material-icons right">input</i>
+        </button>
+      <% end %>
+    </div>
   </div>
 </div>
