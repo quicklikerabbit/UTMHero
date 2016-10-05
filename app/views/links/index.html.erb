@@ -1,18 +1,16 @@
-<div class="container">
-  <div class="col s12">
-    <div class="row">
-      <div class="col s3">
-        <h2>Make Another Link</h1>
+<div class="row">
+    <div class="col s3 card-panel">
+      <h2>Make Another Link</h2>
+      <div id="links-index-form">
         <%= render 'links_index_form' =%>
       </div>
-      <div class="col s9">
-        <h2>Your Links</h1>
-        <button id="share-links-button">Share Your Links</button>
-        <%= render 'share_links_modal' =%>
-        <br />
-        <br />
-        <%= render 'links_table' =%>
-      </div>
     </div>
+  <div class="col s9">
+    <h2>Your Links</h2>
+    <button class="btn waves-effect waves-light light-blue darken-4">Share Your Links</button>
+    <%= render 'share_links_modal' =%>
+    <br />
+    <br />
+    <%= render 'links_table' =%>
   </div>
 </div>
