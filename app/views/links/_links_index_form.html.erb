@@ -1,6 +1,6 @@
 <% if @last_link %>
   <%= form_for @link do |f| %>
-    <div class="pure-form">
+    <div class="input-field col s12">
       <%= f.label :client_id %><br>
       <%= f.text_field :client_id, value: @client_name %>
       <%= f.label :website_url, "Website URL*" %>
@@ -23,7 +23,7 @@
   <% end %>
 <% else %>
   <%= form_for @link do |f| %>
-    <div class="pure-form">
+    <div class="input-field col s12">
       <%= f.label :client_id %><br>
       <%= f.text_field :client_id, value: @client_name %>
       <%= f.label :website_url, "Website URL*" %>
