@@ -1,5 +1,5 @@
-<div class="pure-g">
-  <div class="l-box-lrg pure-u-1 centered">
+<div class="container">
+  <div class="col s12">
     <h1 class="header">Sign Up</h1>
     <h3>Already have an account? Log in <a href="<%= new_session_path %>">here</a></h3>
     <%= form_for @user do |f| %>
@@ -14,20 +14,31 @@
         </div>
       <br />
       <% end %>
-      <div class="pure-form pure-form-stacked">
-        <%= f.label :first_name, "First Name*" %><br>
-        <%= f.text_field :first_name, :required => true %>
-        <%= f.label :last_name, "Last Name" %><br>
-        <%= f.text_field :last_name %>
-        <%= f.label :email, "Email*" %><br>
-        <%= f.text_field :email, :required => true, type: 'email' %>
-        <%= f.label :password, "Password*" %><br>
-        <%= f.password_field :password, :required => true %>
-        <%= f.label :password_confirmation, "Confirm Password*" %><br>
-        <%= f.password_field :password_confirmation, :required => true %>
-        <br />
-        <%= f.submit "Submit", class: "pure-button pure-button-primary" %>
-      </div>
+          <div class="input-field col s6">
+            <%= f.label :first_name, "First Name*" %><br>
+            <%= f.text_field :first_name, :required => true %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :last_name, "Last Name" %><br>
+            <%= f.text_field :last_name %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :email, "Email*" %><br>
+            <%= f.text_field :email, :required => true, type: 'email' %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :password, "Password*" %><br>
+            <%= f.password_field :password, :required => true %>
+          </div>
+          <div class="input-field col s6">
+            <%= f.label :password_confirmation, "Confirm Password*" %><br>
+            <%= f.password_field :password_confirmation, :required => true %>
+          </div>
+          <br />
+          <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Sign Up
+            <i class="material-icons right">done</i>
+          </button>
+        </div>
     <% end %>
   </div>
 </div>
