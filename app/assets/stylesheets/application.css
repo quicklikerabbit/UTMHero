@@ -15,3 +15,6 @@
  *= require dataTables/jquery.dataTables
  *= require_self
  */
+ html {
+   font-family: GillSans, Calibri, Trebuchet, sans-serif;
+ }
