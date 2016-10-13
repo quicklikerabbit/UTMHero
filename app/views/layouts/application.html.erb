@@ -4,6 +4,7 @@
   <title>UtmHero</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://use.fontawesome.com/8e1bbc093c.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body data-no-turbolink="true">
@@ -30,8 +31,10 @@
         <%= content_tag(:div, value, class: "notifications") %>
       <% end %>
     </div>
-    <% end %>
+  <% end %>
+  <main>
   <%= yield %>
+  </main>
   <footer class="page-footer light-blue darken-4">
     <div class="container">
       <div class="row">

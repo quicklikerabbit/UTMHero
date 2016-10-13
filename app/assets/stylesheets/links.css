@@ -66,16 +66,7 @@
   border: 3px solid white;
   outline: none;
 }
-#copy-button {
-  background: none;
-  color: white;
-  padding: 0.5em 2em;
-  border-radius: 5px;
-  margin-top: 2em;
-  cursor: pointer;
-  border: 3px solid white;
-  outline: none;
-}
+
 #close-button {
   top: 75px;
   right: 30px;
@@ -87,4 +78,6 @@
   box-sizing: inherit;
   border: 1px solid #d4d2d0;
   border-radius: 4px;
+  white-space: nowrap;
+  overflow: auto;
 }

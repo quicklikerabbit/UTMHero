@@ -41,17 +41,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col s3">
+      <div class="col s3" style="width: auto">
         <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>
       </div>
-      <div id="created-link" class="col s9">
-        <p>
-          <br />
+      <% end %>
+      <div id="created-link" class="col s8">
+        <p style="height: 6px">
+          Copy meeeeeee
         </p>
       </div>
+      <div class="col s1">
+        <button id="copy-button" onclick="Materialize.toast('Copied!', 1000)" class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Copy to clipboard" type="button" data-clipboard-target="#created-link">
+            <i class="fa fa-files-o"></i>
+        </button>
+      </div>
     </div>
-    <% end %>
   </div>
   <br />
