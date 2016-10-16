@@ -7,8 +7,11 @@
     </div>
   <div class="col s9">
     <h2>Your Links</h2>
-    <button class="btn waves-effect waves-light light-blue darken-4">Share Your Links</button>
-    <%= render 'share_links_modal' =%>
+    <button data-target="share_links_modal" class="btn modal-trigger waves-effect waves-light light-blue darken-4">Share Your Links</button>
+    <div>
+      <%= render 'share_links_modal' =%>  
+    </div>
+
     <br />
     <br />
     <div>

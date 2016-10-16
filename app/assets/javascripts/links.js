@@ -4,6 +4,7 @@ $(function() {
 });
 
 $(function() {
+  $('.modal-trigger').leanModal();
   $("#links_table thead input").on( 'keyup change', function () {
       table
           .column( $(this).parent().index()+':visible' )
