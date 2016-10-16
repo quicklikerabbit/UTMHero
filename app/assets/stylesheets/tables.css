@@ -1,21 +1,12 @@
-table{
-
-}
-
-#links-table table td{
-  overflow: scroll;
-  max-width: 5em;
-  white-space: nowrap;
+#links_table{
+  max-width: 95%;
   font-size: small;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
-  max-width: 75%;
 }
 
-table td{
-
-}
-
-table td:hover {
-
+#links_table td{
+  overflow: scroll;
+  max-width: 5em;
+  white-space: nowrap;
 }
