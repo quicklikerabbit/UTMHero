@@ -1,25 +1,22 @@
 <!-- The Modal -->
 <div id="share_links_modal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
-      <h3>Who do you want to share them with?</h3>
-      <%= form_for @add_user, url: {controller: 'user_adder', action: "create"} do |f| %>
-        <div class="input-field col s6">
+    <h3>Who do you want to share them with?</h3>
+    <%= form_for @add_user, url: {controller: 'user_adder', action: "create"} do |f| %>
+        <div class="input-field">
           <%= f.label :client %><br>
           <%= f.text_field :client %>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field">
           <%= f.label :user_email %><br>
           <%= f.text_field :user_email, required: true, type: 'email', style: "margin-bottom: 0.5em"  %>
         </div>
-        <div class="col s6">
-          <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Share
-            <i class="fa fa-share right"></i>
-          </button>
-        </div>
+        <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Share
+          <i class="fa fa-share right"></i>
+        </button>
       <% end %>
-      <p>Note: they need to sign up before you can share links with them</p>
-    </div>
-
+  <div class="modal-footer">
+    <p>Note: they need to sign up before you can share links with them</p>
+  </div>
 </div>
