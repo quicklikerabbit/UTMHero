@@ -29,6 +29,12 @@ class LinksController < ApplicationController
           @user_names.push(@users.find(link.user_id).first_name)
         end
       end
+      respond_to do |format|
+        format.html
+        format.js
+        format.json
+      end
+      return @links.to_json
     end
   end
 
