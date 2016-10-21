@@ -1,19 +1,3 @@
-<!-- <div>
-  <b>Show / Hide Columns:</b>
-  <br />
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="0">Client</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="1">Made By</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="2">Created At</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="3">Bitly URL</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="4">Website URL</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="5">Campaign Source</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="6">Campaign Medium</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="7">Campaign Term</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="8">Campaign Content</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="9">Campaign Name</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="10">Notes</button>
-  <button class="showHideColumn selected button-xsmall pure-button" data-columnindex="11">UTM Link</button>
-</div> -->
 <table id="links_table" class="responsive-table bordered striped">
   <thead>
       <tr>
@@ -31,24 +15,36 @@
           <th>UTM Link</th>
       </tr>
   </thead>
-  <tbody>
+  <tbody id="links_table_body">
     <% (0..@links.length).each do |i| %>
       <% if @links[i] %>
         <tr>
-            <td><%= @client_names[i] %></td>
-            <td><%= @user_names[i] %></td>
-            <td><%= @created_times[i] %></td>
-            <td><%= @links[i].short_link %></td>
-            <td><%= @links[i].website_url %></td>
-            <td><%= @links[i].campaign_source %></td>
-            <td><%= @links[i].campaign_medium %></td>
-            <td><%= @links[i].communication_id %></td>
-            <td><%= @links[i].utm_content %></td>
-            <td><%= @links[i].campaign_name %></td>
-            <td><%= @links[i].link_reference %></td>
-            <td><%= @links[i].utm_link %></td>
+          <td><%= @client_names[i] %></td>
+          <td><%= @user_names[i] %></td>
+          <td><%= @created_times[i] %></td>
+          <td><%= @links[i].short_link %></td>
+          <td><%= @links[i].website_url %></td>
+          <td><%= @links[i].campaign_source %></td>
+          <td><%= @links[i].campaign_medium %></td>
+          <td><%= @links[i].communication_id %></td>
+          <td><%= @links[i].utm_content %></td>
+          <td><%= @links[i].campaign_name %></td>
+          <td><%= @links[i].link_reference %></td>
+          <td><%= @links[i].utm_link %></td>
         </tr>
       <% end %>
-  <% end %>
+    <% end %>
   </tbody>
 </table>
+
+<% if @links %>
+<ul class="pagination">
+  <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+  <li class="active light-blue darken-4"><a href="#!">1</a></li>
+  <li class="waves-effect"><a href="#!">2</a></li>
+  <li class="waves-effect"><a href="#!">3</a></li>
+  <li class="waves-effect"><a href="#!">4</a></li>
+  <li class="waves-effect"><a href="#!">5</a></li>
+  <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+</ul>
+<% end %>
