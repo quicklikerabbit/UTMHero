@@ -1,79 +1,85 @@
 <% if @last_link %>
   <%= form_for @link do |f| %>
-    <div class="input-field">
-      <%= f.label :client_id %><br>
+  <div class="col s12">
+    <div class="input-field col s3">
+      <%= f.label :client_id %>
       <%= f.text_field :client_id, value: @client_name %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :website_url, "Website URL*" %>
       <%= f.text_field :website_url, value: @last_link.website_url, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_source, "Campaign Source*"%>
       <%= f.text_field :campaign_source, value: @last_link.campaign_source, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_medium, "Campaign Medium*" %>
       <%= f.text_field :campaign_medium, value: @last_link.campaign_medium, required: true %>
     </div>
-    <div class="input-field">
+  </div>
+  <div class="col s12">
+    <div class="input-field col s3">
       <%= f.label :communication_id, "Campaign Term" %>
       <%= f.text_field :communication_id, value: @last_link.communication_id %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :utm_content, "Campaign Content" %>
       <%= f.text_field :utm_content, value: @last_link.utm_content %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_name, "Campaign Name*" %>
       <%= f.text_field :campaign_name, value: @last_link.campaign_name, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :link_reference, "Notes" %>
       <%= f.text_field :link_reference, value: @last_link.link_reference %>
     </div>
-      <br />
-      <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
+    <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Create
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
   <% end %>
 <% else %>
   <%= form_for @link do |f| %>
-    <div class="input-field">
-      <%= f.label :client_id %><br>
+  <div class="col s12">
+    <div class="input-field col s3">
+      <%= f.label :client_id %>
       <%= f.text_field :client_id, value: @client_name %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :website_url, "Website URL*" %>
       <%= f.text_field :website_url, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_source, "Campaign Source*"%>
       <%= f.text_field :campaign_source, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_medium, "Campaign Medium*" %>
       <%= f.text_field :campaign_medium, required: true %>
     </div>
-    <div class="input-field">
+  </div>
+  <div class="col s12">
+    <div class="input-field col s3">
       <%= f.label :communication_id, "Campaign Term" %>
       <%= f.text_field :communication_id %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :utm_content, "Campaign Content" %>
       <%= f.text_field :utm_content%>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :campaign_name, "Campaign Name*" %>
       <%= f.text_field :campaign_name, required: true %>
     </div>
-    <div class="input-field">
+    <div class="input-field col s3">
       <%= f.label :link_reference, "Notes" %>
       <%= f.text_field :link_reference %>
     </div>
-      <br />
-      <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
+    <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
   <% end %>
 <% end %>

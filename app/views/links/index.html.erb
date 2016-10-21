@@ -1,22 +1,22 @@
 <div class="row">
     <div class="col s3 card-panel">
-      <h2>Make Another Link</h2>
-      <div id="links-index-form">
-        <%= render 'links_index_form' =%>
+      <div>
+        <button data-target="share_links_modal" class="btn modal-trigger waves-effect waves-light light-blue darken-4">Share Your Links</button>
+        <%= render 'share_links_modal' =%>
+      </div>
+      <div>
+        <%= render 'search' %>
       </div>
     </div>
+
   <div class="col s9">
-    <h2>Your Links</h2>
-    <button data-target="share_links_modal" class="btn modal-trigger waves-effect waves-light light-blue darken-4">Share Your Links</button>
-    <div>
-      <%= render 'share_links_modal' =%>  
+    <div id="links-index-form">
+      <h4>Make a New Link</h4>
+      <%= render 'links_index_form' =%>
     </div>
-
-    <br />
-    <br />
     <div>
-        <%= render 'links_table' =%>
+      <h4>Your Links</h4>
+      <%= render 'links_table' =%>
     </div>
-
   </div>
 </div>
