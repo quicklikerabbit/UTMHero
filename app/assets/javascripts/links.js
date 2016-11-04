@@ -31,8 +31,7 @@ function sortTable(table, col, reverse) {
         i;
     reverse = -((+reverse) || -1);
     tr = tr.sort(function (a, b) { // sort rows
-        return reverse // `-1 *` if want opposite order
-            * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
+        return reverse * (a.cells[col].textContent.trim() // using `.textContent.trim()` for test
                 .localeCompare(b.cells[col].textContent.trim())
                );
     });
@@ -58,19 +57,8 @@ function makeAllSortable(parent) {
 
 window.onload = function () {makeAllSortable();};
 
-$(function() {
-  $('#links_table_body').pagination({
-      dataSource: [],
-      callback: function(data, pagination) {
-          // template method of yourself
-          var html = template(data);
-          dataContainer.html(html);
-      }
-  });
-
   $.get('/links', function(data){
     $.each(JSON.parse(data), function(index, element){
       console.log(element);
     });
   });
-});
