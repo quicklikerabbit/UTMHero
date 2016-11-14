@@ -1,6 +1,6 @@
 <% if @last_link %>
   <%= form_for @link do |f| %>
-  <div class="col s12">
+  <div>
     <div class="input-field col s3">
       <%= f.label :client_id %>
       <%= f.text_field :client_id, value: @client_name %>
@@ -18,7 +18,7 @@
       <%= f.text_field :campaign_medium, value: @last_link.campaign_medium, required: true %>
     </div>
   </div>
-  <div class="col s12">
+  <div>
     <div class="input-field col s3">
       <%= f.label :communication_id, "Campaign Term" %>
       <%= f.text_field :communication_id, value: @last_link.communication_id %>
@@ -42,7 +42,7 @@
   <% end %>
 <% else %>
   <%= form_for @link do |f| %>
-  <div class="col s12">
+  <div>
     <div class="input-field col s3">
       <%= f.label :client_id %>
       <%= f.text_field :client_id, value: @client_name %>
@@ -60,7 +60,7 @@
       <%= f.text_field :campaign_medium, required: true %>
     </div>
   </div>
-  <div class="col s12">
+  <div>
     <div class="input-field col s3">
       <%= f.label :communication_id, "Campaign Term" %>
       <%= f.text_field :communication_id %>

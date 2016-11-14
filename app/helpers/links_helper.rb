@@ -23,6 +23,8 @@ module LinksHelper
           @user_names.push(@users.find(link.user_id).first_name)
         end
       end
+      @unique_client_names = @client_names.uniq
+      @unique_created_times = @created_times.uniq
       respond_to do |format|
         format.html
         format.js

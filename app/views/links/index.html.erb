@@ -1,11 +1,16 @@
 <div class="row">
-  <div class="col s3 card-panel">
+  <div id="search-filter-panel" class="col s3 card-panel">
     <div>
       <button data-target="share_links_modal" class="btn modal-trigger waves-effect waves-light light-blue darken-4">Share Your Links</button>
       <%= render 'share_links_modal' =%>
     </div>
     <div>
       <%= render 'search' %>
+    </div>
+
+    <div>
+      <h5>Filter</h5>
+      <%= render 'filter_dropdowns' =%>
     </div>
   </div>
   <div class="col s9">

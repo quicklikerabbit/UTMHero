@@ -45,7 +45,7 @@ function makeSortable(table) {
     else return; // if no `<thead>` then do nothing
     while (--i >= 0) (function (i) {
         var dir = 1;
-        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir))});
+        th[i].addEventListener('click', function () {sortTable(table, i, (dir = 1 - dir));});
     }(i));
 }
 
