@@ -57,8 +57,17 @@ function makeAllSortable(parent) {
 
 window.onload = function () {makeAllSortable();};
 
-  $.get('/links', function(data){
+$.get('/links', function(data){
     $.each(JSON.parse(data), function(index, element){
-      console.log(element);
+        console.log(element);
     });
-  });
+});
+
+function updateButton(selected){
+    $("#filters").empty();
+    $("#filters").append("<p>Showing only: " + selected + "</p>");
+}
+
+function resetButton(){
+    $("#filters").empty();
+}

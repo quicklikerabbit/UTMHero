@@ -1,6 +1,6 @@
 <!-- Dropdown Trigger -->
 <a class='dropdown-button filter btn' data-activates='client-dropdown'>Client</a>
-<br />
+</br>
 <a class='dropdown-button filter btn' data-activates='created-times-dropdown'>Created At</a>
 
 <!-- Dropdown Structure -->
@@ -8,25 +8,25 @@
   <div class="options">
     <% (0..@unique_client_names.length).each do |i| %>
       <% if @unique_client_names[i] %>
-        <li><a href="#!"><%=@unique_client_names[i]=%></a></li>
+        <li><a href="#!" onclick="updateButton(this.innerText);"><%= @unique_client_names[i] =%></a></li>
       <% end %>
     <% end %>
   </div>
   <div>
     <li class="divider"></li>
-    <li><a href="#!">Reset</a></li>
+    <li><a href="#!" onclick="resetButton();">Reset</a></li>
   </div>
 </ul>
 <ul id='created-times-dropdown' class='dropdown-content'>
   <div class="options">
-    <% (0..@unique_created_times.length).each do |i| %>
-      <% if @unique_created_times[i] %>
-        <li><a href="#!"><%=@unique_created_times[i]=%></a></li>
+    <% (0..@created_times_ranges.length).each do |i| %>
+      <% if @created_times_ranges[i] %>
+        <li><a href="#!" onclick="updateButton(this.innerText);"><%=@created_times_ranges[i]=%></a></li>
       <% end %>
     <% end %>
   </div>
   <div>
     <li class="divider"></li>
-    <li><a href="#!">Reset</a></li>
+    <li><a href="#!" onclick="resetButton();">Reset</a></li>
   </div>
 </ul>
