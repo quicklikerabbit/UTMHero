@@ -43,13 +43,17 @@ module LinksHelper
     today = Date.today
     yesterday = today - 1
     today_array = []
+    yesterday_array = []
+
     created_times_array.each do |date|
       date = Date.parse(date)
       if date > yesterday
         today_array.push(date)
+      elsif date <= yesterday
+        yesterday_array.push(date)
       end
     end
-    Date.parse(created_times_array[1  ])
+    Date.parse(created_times_array[1])
     return created_times_array
   end
 
